@@ -671,6 +671,57 @@ header {
     font-size: 24px; /* Adjust font size if needed */
     margin-bottom: 5px;
 }
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .about-content,
+    .contact-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .course-list,
+    .internship-list,
+    .project-grid,
+    .gallery-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .course,
+    .internship,
+    .project-card,
+    .gallery-item {
+        width: 90%;
+    }
+
+    .home-content h1 {
+        font-size: 24px;
+    }
+
+    .home-content h3 {
+        font-size: 18px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .director-img,
+    .director-img1 {
+        width: 150px;
+        height: 150px;
+    }
+
+    .map-container {
+        width: 100%;
+        height: 250px;
+    }
+}
 
 .highlight, .sub-text, .gst, .footer {
     margin: 3px 0; /* Reduce space between sections */
