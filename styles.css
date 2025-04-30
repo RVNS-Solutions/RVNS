@@ -407,3 +407,50 @@ section {
     height: 100%;
     border: none;
 }
+/* Ensure everything is aligned to the desktop view */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Main container with fixed width */
+.container {
+  width: 1024px;
+  margin: 0 auto; /* Centers the content */
+}
+
+/* Example: Fixed width for images */
+img {
+  width: 1024px; /* Ensure images scale with the desktop size */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Example for a header or section */
+.header {
+  width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.content {
+  width: 1024px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Footer with fixed width */
+.footer {
+  width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Optional: You can hide certain elements on mobile if needed */
+@media (max-width: 1024px) {
+  .container, .header, .content, .footer {
+    width: 1024px !important;
+  }
+}
