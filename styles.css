@@ -1,359 +1,383 @@
-/* ========== General Reset & Base ========== */
+/* ===== Reset & Base ===== */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: Arial, sans-serif;
   background: #f9f9f9;
   color: #333;
-  margin: 0;
-  padding: 0;
   line-height: 1.5;
   text-align: center;
+  position: relative;
 }
 
+/* ===== Utility ===== */
+.container {
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
 img, video, iframe {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* ========== Viewport Meta ========== */
-/* Add this in your <head> of index.html:
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-*/
-
-/* ========== Header & Navigation ========== */
-.header-strip {
-  background-color: #FF8C00;
-  padding: 5px 0;
+/* ===== Header ===== */
+header {
+  background: linear-gradient(to right, #1F3C61, #6A4C93);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+}
+header .logo {
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid white;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+header .text-content {
+  flex: 1;
+  text-align: left;
+  color: white;
+  padding-left: 20px;
+}
+header .title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #FF6347;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+header .title span {
+  color: #FFD700;
+  font-size: 2.4rem;
+}
+header .tagline {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #FFD700;
+  margin-top: 5px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+}
+header .highlight {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f1f1f1;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+header .sub-text {
+  font-size: 0.9rem;
+  color: #B0E0E6;
+  margin-top: 8px;
 }
 
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 10px 20px;
-}
-
-.header-content h2 {
-  margin: 5px 0;
-  font-size: 22px;
-  color: #4D0B00;
-}
-
+/* ===== Navigation ===== */
 nav {
-  background-color: #003366;
+  background: #003366;
   padding: 10px 0;
+  margin-bottom: 20px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
 nav ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 15px;
 }
-
-nav ul li {
-  margin: 0 15px;
-}
-
-nav ul li a {
-  color: white;
+nav a {
+  color: #fff;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: bold;
   padding: 8px 12px;
   border-radius: 5px;
   transition: background 0.3s;
 }
-
-nav ul li a:hover {
-  background-color: #0055a5;
+nav a:hover {
+  background: #0055a5;
 }
 
-/* ========== Sections ========== */
+/* ===== Sections ===== */
 section {
-  background: #ffffff;
+  background: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
+  width: 90%;
+  max-width: 1200px;
+}
+section h2 {
+  font-size: 2rem;
+  color: #1F3C61;
+  margin-bottom: 20px;
 }
 
-/* ========== Home Slider ========== */
+/* ===== Home Slider ===== */
 #home {
   position: relative;
   height: 500px;
   overflow: hidden;
+  margin-bottom: 40px;
 }
-
 .slider {
-  position: absolute;
-  width: 100%;
   height: 100%;
+  position: relative;
 }
-
 .slide {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   background-size: cover;
   background-position: center;
   opacity: 0;
   transition: opacity 1.5s ease-in-out;
 }
-
 .slide.active {
   opacity: 1;
 }
-
 .home-content {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
   background: rgba(255,255,255,0.8);
   border-radius: 8px;
   padding: 25px;
   max-width: 600px;
 }
-
-.home-content h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
-  color: #007BFF;
-}
-
-.home-content h3 {
-  font-size: 22px;
-  margin-bottom: 15px;
-  color: #28a745;
-}
-
-.home-content p {
-  font-size: 18px;
-  opacity: 0.9;
-}
-
+.home-content h1 { font-size: 2.5rem; color: #007BFF; }
+.home-content h3 { font-size: 1.5rem; color: #28a745; margin: 10px 0; }
+.home-content p { font-size: 1rem; opacity: 0.9; }
 .cta-buttons .btn {
   display: inline-block;
+  margin: 8px;
+  padding: 10px 20px;
   background: #007BFF;
   color: #fff;
-  padding: 10px 20px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1rem;
   border-radius: 5px;
-  margin: 5px;
   transition: background 0.3s;
 }
-
 .cta-buttons .btn:hover {
   background: #0056b3;
 }
 
-/* ========== About ========== */
+/* ===== About ===== */
 #about .about-content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
 }
-
-.director-img,
-.director-img1 {
-  width: 250px;
-  height: 250px;
+#about .about-content > div { flex: 1 1 300px; }
+.director-img {
+  width: 100%;
+  max-width: 250px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* ========== Generic Card Grids ========== */
+/* ===== Card Grids ===== */
 .course-list,
 .internship-list,
-.project-grid,
-.gallery-grid {
+.project-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
-
-.course, .internship, .project-card, .gallery-item {
+.course,
+.internship,
+.project-card {
   background: #fff;
   border-radius: 10px;
   padding: 15px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
   flex: 1 1 calc(33.333% - 40px);
   max-width: calc(33.333% - 40px);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-
-.course:hover, .internship:hover, .project-card:hover, .gallery-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-}
-
-.course img, .internship img, .project-card img {
+.course img,
+.internship img,
+.project-card img {
   width: 100%;
   height: 150px;
   object-fit: cover;
   border-radius: 8px;
 }
-
-.course h3, .internship h3, .project-card h3 {
-  font-size: 20px;
+.course:hover,
+.internship:hover,
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+.course h3,
+.internship h3,
+.project-card h3 {
   margin: 10px 0;
+  font-size: 1.1rem;
   color: #333;
 }
-
-.course p, .internship p, .project-card p {
-  font-size: 14px;
+.course p,
+.internship p,
+.project-card p {
+  font-size: 0.9rem;
   color: #555;
 }
-
-.apply-btn {
-  background: #28a745;
-  color: #fff;
-  padding: 10px 15px;
-  text-decoration: none;
-  border-radius: 5px;
+.apply-btn,
+.view-details-btn {
   display: inline-block;
   margin-top: 10px;
+  padding: 8px 16px;
+  background: #28a745;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
   transition: background 0.3s;
 }
-
-.apply-btn:hover {
+.apply-btn:hover,
+.view-details-btn:hover {
   background: #218838;
 }
 
-/* ========== Gallery “See More” ========== */
-.gallery-item:nth-child(n+6) {
-  display: none;
+/* ===== Gallery ===== */
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
 }
-
+.gallery-item {
+  width: calc(33.333% - 20px);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.gallery-item:hover {
+  transform: scale(1.05);
+}
 #see-more-btn {
-  margin-top: 20px;
+  margin: 20px auto;
+  padding: 10px 20px;
   background: #007BFF;
   color: #fff;
-  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
   transition: background 0.3s;
 }
-
 #see-more-btn:hover {
   background: #0056b3;
 }
 
-/* ========== Contact ========== */
+/* ===== Feedback ===== */
+#feedback .feedback-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+#feedback .stat h3 {
+  font-size: 1.5rem;
+  color: #007BFF;
+}
+#feedback .stat p {
+  color: #333;
+}
+
+/* ===== Contact ===== */
 #contact .contact-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
 }
-
 .contact-info {
-  flex: 1;
+  flex: 1 1 300px;
   text-align: left;
 }
-
-.contact-info p {
-  font-size: 16px;
-  margin: 10px 0;
+.contact-info p,
+.contact-info a {
+  display: block;
+  font-size: 0.9rem;
+  margin: 8px 0;
   color: #333;
 }
-
 .map-container {
-  flex: 1;
-  min-width: 300px;
+  flex: 1 1 300px;
   height: 300px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* ========== Footer ========== */
-.footer {
+/* ===== Footer & Back-to-Top ===== */
+footer {
   background: #fff;
-  color: #000;
-  padding: 10px;
-  border-radius: 5px;
-  margin: 15px auto;
-  font-size: 18px;
-  max-width: 1200px;
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 30px;
 }
-
-/* ========== Text Highlights ========== */
-.title {
-  font-size: 50px;
-  font-weight: bold;
-}
-
-.highlight {
-  font-size: 22px;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.sub-text, .gst {
-  font-size: 18px;
-  margin-top: 5px;
-}
-
-.gst {
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 12px;
+  font-size: 1.2rem;
+  border: none;
+  background: #007BFF;
   color: #fff;
-  font-weight: bold;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+#back-to-top.show {
+  opacity: 1;
 }
 
-/* ========== Responsive Breakpoints ========== */
+/* ===== Responsive Breakpoints ===== */
 @media (max-width: 1024px) {
-  .course, .internship, .project-card, .gallery-item {
-    flex: 1 1 calc(50% - 40px);
-    max-width: calc(50% - 40px);
+  .course,
+  .internship,
+  .project-card,
+  .gallery-item {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
   }
 }
-
 @media (max-width: 768px) {
-  /* Single-column cards & tighter spacing */
-  section {
-    padding: 10px;
-    margin: 10px auto;
-  }
-  .course, .internship, .project-card, .gallery-item {
+  header { flex-direction: column; text-align: center; }
+  header .text-content { padding: 20px 0 0; }
+  .course,
+  .internship,
+  .project-card,
+  .gallery-item {
     flex: 1 1 100%;
     max-width: 100%;
   }
-  .home-content h1 {
-    font-size: 28px;
-  }
-  .home-content h3 {
-    font-size: 18px;
-  }
-  .home-content p {
-    font-size: 16px;
-  }
+  .home-content h1 { font-size: 2rem; }
+  .home-content h3 { font-size: 1.2rem; }
 }
-
 @media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-  }
-  nav ul li {
-    margin: 10px 0;
-  }
+  nav ul { flex-direction: column; gap: 10px; }
 }
