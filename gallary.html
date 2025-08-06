@@ -7,8 +7,59 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<meta name="viewport" content="width=1024">
+	<style>
+		.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.lightbox-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.lightbox img,
+.lightbox video {
+    max-width: 90%;
+    max-height: 90%;
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+		</style>
 </head>
 <body>
+	<!-- Lightbox Viewer -->
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="Lightbox Image">
+        <video id="lightbox-video" controls>
+            <source id="lightbox-video-src" src="" type="video/mp4">
+        </video>
+    </div>
+</div>
      <!-- Header -->
      <header>
         <div class="container" style="display: flex; align-items: center; justify-content: flex-start; padding: 25px 35px; background: linear-gradient(to right, #1F3C61, #6A4C93); border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
@@ -145,6 +196,13 @@
 
     <!-- JavaScript -->
     <script>
+	    document.addEventListener("DOMContentLoaded", function () {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxVideo = document.getElementById("lightbox-video");
+    const lightboxVideoSrc = document.getElementById("lightbox-video-src");
+    const closeBtn = document.query
+
         document.addEventListener("DOMContentLoaded", function () {
             let slides = document.querySelectorAll(".slide");
             let index = 0;
@@ -221,3 +279,4 @@
     </script>
 </body>
 </html>
+
