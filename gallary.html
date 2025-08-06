@@ -1,233 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RVNS Solutions</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-	<meta name="viewport" content="width=1024">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RVNS Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      padding: 10px;
+      background: #333;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .gallery-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .gallery-item {
+      width: 200px;
+      height: 150px;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-item img,
+    .gallery-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .lightbox-content {
+      position: relative;
+      margin: auto;
+      padding: 20px;
+      max-width: 80%;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .lightbox img,
+    .lightbox video {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 10px;
+      border: 2px solid white;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-     <!-- Header -->
-     <header>
-        <div class="container" style="display: flex; align-items: center; justify-content: flex-start; padding: 25px 35px; background: linear-gradient(to right, #1F3C61, #6A4C93); border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
-            
-            <!-- Logo Image -->
-            <div class="logo" style="flex-shrink: 0; width: 150px; height: 150px; margin-right: 30px; border-radius: 50%; overflow: hidden; border: 3px solid white; box-shadow: 0 0 12px rgba(0,0,0,0.3);">
-                <img src="vxl.jpg" alt="RVNS Solutions Logo" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-    
-            <!-- Company Name and Tagline -->
-            <div class="text-content" style="text-align: left; color: white; padding-left: 20px; max-width: 70%;">
-                
-                <!-- Company Name -->
-                <div class="title" style="font-size: 72px; font-weight: 900; color: #FF6347; letter-spacing: 3px; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);">
-                    RVNS <span style="color: #FFD700; font-size: 58px;">SOLUTIONS</span>
-                </div>
-    
-                <!-- Tagline -->
-                <div class="tagline" style="font-size: 22px; font-weight: 600; color: #FFD700; margin-top: 5px; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);">
-                    Unlock Your Future In-Demand Skills
-                </div>
-    
-                <!-- Highlight Section -->
-                <div class="highlight" style="font-size: 18px; font-weight: 600; margin-top: 10px; color: #f1f1f1; letter-spacing: 1px;">
-                    TRAINING | INTERNSHIP | PROJECTS &nbsp; | &nbsp; INDUSTRIAL TRAINING | PLACEMENT ASSISTANCE
-                </div>
-    
-                <!-- Sub-Text for Services -->
-                <div class="sub-text" style="font-size: 16px; margin-top: 8px; color: #B0E0E6; white-space: nowrap;">
-                    Quality Training: C, DS, JAVA, PYTHON, WEB DEVELOPMENT, CYBER SECURITY, DIGITAL MARKETING, DATA SCIENCE
-                </div>
-            </div>
+  <!-- Header -->
+  <header>
+    <div class="container" style="display: flex; align-items: center; justify-content: flex-start; padding: 25px 35px; background: linear-gradient(to right, #1F3C61, #6A4C93); border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
+      <div class="logo" style="width: 150px; height: 150px; margin-right: 30px; border-radius: 50%; overflow: hidden; border: 3px solid white; box-shadow: 0 0 12px rgba(0,0,0,0.3);">
+        <img src="vxl.jpg" alt="RVNS Solutions Logo" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="text-content" style="color: white;">
+        <div class="title" style="font-size: 72px; font-weight: 900; color: #FF6347;">
+          RVNS <span style="color: #FFD700; font-size: 58px;">SOLUTIONS</span>
         </div>
-    </header>
-    
-
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="internship.html">Internships</a></li>
-            <li><a href="project.html">Projects</a></li>
-            <li><a href="gallary.html">Gallery</a></li>
-            <li><a href="feedback.html">Feedback</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        .gallery-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .gallery-item {
-            width: 200px;
-            height: 150px;
-            overflow: hidden;
-            cursor: pointer;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .gallery-item img,
-        .gallery-item video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Lightbox Styles */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-
-        .lightbox-content {
-            position: relative;
-            margin: auto;
-            padding: 20px;
-            max-width: 80%;
-            text-align: center;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .lightbox img,
-        .lightbox video {
-            max-width: 100%;
-            max-height: 80vh;
-            border-radius: 10px;
-            border: 2px solid white;
-        }
-
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 25px;
-            color: white;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-
-    <h2>Gallery</h2>
-    <div class="gallery-grid">
-        <!-- Image Items -->
-        <div class="gallery-item"><img src="1.jpg" alt="Image 1" class="media" data-type="image"></div>
-        <div class="gallery-item"><img src="2.jpg" alt="Image 2" class="media" data-type="image"></div>
-        <div class="gallery-item"><img src="3.jpg" alt="Image 3" class="media" data-type="image"></div>
-	<div class="gallery-item"><img src="4.jpg" alt="Image 4" class="media" data-type="image"></div>
-	<div class="gallery-item"><img src="5.jpg" alt="Image 3" class="media" data-type="image"></div>
-<br><br>
-        <!-- Video Items -->
-        <div class="gallery-item">
-            <video class="media" data-type="video">
-                <source src="video1.mp4" type="video/mp4">
-                Your browser does not support video.
-            </video>
+        <div class="tagline" style="font-size: 22px; font-weight: 600; color: #FFD700;">
+          Unlock Your Future In-Demand Skills
         </div>
-        <div class="gallery-item">
-            <video class="media" data-type="video">
-                <source src="video2.mp4" type="video/mp4">
-                Your browser does not support video.
-            </video>
+        <div class="highlight" style="font-size: 18px; color: #f1f1f1;">
+          TRAINING | INTERNSHIP | PROJECTS | INDUSTRIAL TRAINING | PLACEMENT ASSISTANCE
         </div>
+        <div class="sub-text" style="font-size: 16px; color: #B0E0E6;">
+          Quality Training: C, DS, JAVA, PYTHON, WEB DEVELOPMENT, CYBER SECURITY, DIGITAL MARKETING, DATA SCIENCE
+        </div>
+      </div>
     </div>
+  </header>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox">
-        <span class="close">&times;</span>
-        <div class="lightbox-content">
-            <img id="lightbox-img" style="display:none;" />
-            <video id="lightbox-video" controls style="display:none;">
-                <source id="lightbox-video-src" src="" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Courses</a></li>
+      <li><a href="#">Internships</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Feedback</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Gallery -->
+  <h2>Gallery</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="1.jpg" alt="Image 1" class="media" data-type="image"></div>
+    <div class="gallery-item"><img src="2.jpg" alt="Image 2" class="media" data-type="image"></div>
+    <div class="gallery-item"><img src="3.jpg" alt="Image 3" class="media" data-type="image"></div>
+    <div class="gallery-item"><img src="4.jpg" alt="Image 4" class="media" data-type="image"></div>
+    <div class="gallery-item"><img src="5.jpg" alt="Image 5" class="media" data-type="image"></div>
+    <div class="gallery-item">
+      <video class="media" data-type="video">
+        <source src="video1.mp4" type="video/mp4" />
+      </video>
     </div>
+    <div class="gallery-item">
+      <video class="media" data-type="video">
+        <source src="video2.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>
 
-    <!-- JS -->
-    <script>
-        const mediaElements = document.querySelectorAll('.media');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxVideo = document.getElementById('lightbox-video');
-        const lightboxVideoSrc = document.getElementById('lightbox-video-src');
-        const closeBtn = document.querySelector('.close');
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <div class="lightbox-content">
+      <img id="lightbox-img" style="display:none;" />
+      <video id="lightbox-video" controls style="display:none;">
+        <source id="lightbox-video-src" src="" type="video/mp4" />
+      </video>
+    </div>
+  </div>
 
-        mediaElements.forEach(el => {
-            el.addEventListener('click', () => {
-                lightbox.style.display = 'block';
+  <!-- JavaScript -->
+  <script>
+    const mediaElements = document.querySelectorAll('.media');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxVideo = document.getElementById('lightbox-video');
+    const lightboxVideoSrc = document.getElementById('lightbox-video-src');
+    const closeBtn = document.querySelector('.close');
 
-                if (el.dataset.type === 'image') {
-                    lightboxImg.src = el.src;
-                    lightboxImg.style.display = 'block';
-                    lightboxVideo.style.display = 'none';
-                    lightboxVideo.pause();
-                }
+    mediaElements.forEach(el => {
+      el.addEventListener('click', () => {
+        lightbox.style.display = 'block';
+        if (el.dataset.type === 'image') {
+          lightboxImg.src = el.src;
+          lightboxImg.style.display = 'block';
+          lightboxVideo.style.display = 'none';
+          lightboxVideo.pause();
+        } else if (el.dataset.type === 'video') {
+          const source = el.querySelector('source');
+          lightboxVideoSrc.src = source.src;
+          lightboxVideo.load();
+          lightboxImg.style.display = 'none';
+          lightboxVideo.style.display = 'block';
+          lightboxVideo.play();
+        }
+      });
+    });
 
-                if (el.dataset.type === 'video') {
-                    const source = el.querySelector('source');
-                    lightboxVideoSrc.src = source.src;
-                    lightboxVideo.load();
-                    lightboxImg.style.display = 'none';
-                    lightboxVideo.style.display = 'block';
-                    lightboxVideo.play();
-                }
-            });
-        });
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxImg.style.display = 'none';
+      lightboxVideo.style.display = 'none';
+      lightboxVideo.pause();
+    });
 
-        closeBtn.addEventListener('click', () => {
-            lightbox.style.display = 'none';
-            lightboxImg.style.display = 'none';
-            lightboxVideo.style.display = 'none';
-            lightboxVideo.pause();
-        });
-
-        // Close when clicking outside
-        window.addEventListener('click', e => {
-            if (e.target === lightbox) {
-                lightbox.style.display = 'none';
-                lightboxImg.style.display = 'none';
-                lightboxVideo.style.display = 'none';
-                lightboxVideo.pause();
-            }
-        });
-    </script>
+    window.addEventListener('click', e => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+        lightboxImg.style.display = 'none';
+        lightboxVideo.style.display = 'none';
+        lightboxVideo.pause();
+      }
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
