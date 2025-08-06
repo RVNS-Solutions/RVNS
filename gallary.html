@@ -137,36 +137,39 @@
     </ul>
   </nav>
 
-  <!-- Gallery -->
-  <h2>Gallery</h2>
-  <div class="gallery-grid">
-    <div class="gallery-item"><img src="1.jpg" alt="Image 1" class="media" data-type="image"></div>
-    <div class="gallery-item"><img src="2.jpg" alt="Image 2" class="media" data-type="image"></div>
-    <div class="gallery-item"><img src="3.jpg" alt="Image 3" class="media" data-type="image"></div>
-    <div class="gallery-item"><img src="4.jpg" alt="Image 4" class="media" data-type="image"></div>
-    <div class="gallery-item"><img src="5.jpg" alt="Image 5" class="media" data-type="image"></div>
-    <div class="gallery-item">
-      <video class="media" data-type="video">
-        <source src="video1.mp4" type="video/mp4" />
-      </video>
-    </div>
-    <div class="gallery-item">
-      <video class="media" data-type="video">
-        <source src="video2.mp4" type="video/mp4" />
-      </video>
-    </div>
-  </div>
+ <!-- Gallery Section -->
+<h2>Gallery</h2>
+<div class="gallery-grid">
+  <!-- Image Items -->
+  <div class="gallery-item"><img src="1.jpg" alt="Image 1" class="media" data-type="image"></div>
+  <div class="gallery-item"><img src="2.jpg" alt="Image 2" class="media" data-type="image"></div>
+  <div class="gallery-item"><img src="3.jpg" alt="Image 3" class="media" data-type="image"></div>
+  <div class="gallery-item"><img src="4.jpg" alt="Image 4" class="media" data-type="image"></div>
+  <div class="gallery-item"><img src="5.jpg" alt="Image 5" class="media" data-type="image"></div>
 
-  <!-- Lightbox Modal -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <div class="lightbox-content">
-      <img id="lightbox-img" style="display:none;" />
-      <video id="lightbox-video" controls style="display:none;">
-        <source id="lightbox-video-src" src="" type="video/mp4" />
-      </video>
-    </div>
+  <!-- Add More Images -->
+  <div class="gallery-item"><img src="6.jpg" alt="Image 6" class="media" data-type="image"></div>
+  <div class="gallery-item"><img src="7.jpg" alt="Image 7" class="media" data-type="image"></div>
+
+  <!-- Video Items -->
+  <div class="gallery-item">
+    <video class="media" data-type="video">
+      <source src="video1.mp4" type="video/mp4">
+    </video>
   </div>
+  <div class="gallery-item">
+    <video class="media" data-type="video">
+      <source src="video2.mp4" type="video/mp4">
+    </video>
+  </div>
+  <!-- Add More Videos -->
+  <div class="gallery-item">
+    <video class="media" data-type="video">
+      <source src="video3.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
 
   <!-- JavaScript -->
   <script>
@@ -214,3 +217,4 @@
   </script>
 </body>
 </html>
+
