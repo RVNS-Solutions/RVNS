@@ -211,6 +211,78 @@
     <button id="back-to-top" title="Go to top">↑</button>
   <!-- JavaScript -->
   <script>
+	  document.addEventListener("DOMContentLoaded", function () {
+            let slides = document.querySelectorAll(".slide");
+            let index = 0;
+
+            function changeSlide() {
+                slides.forEach(slide => slide.classList.remove("active"));
+                slides[index].classList.add("active");
+                index = (index + 1) % slides.length;
+            }
+
+            setInterval(changeSlide, 3000);
+
+            window.onscroll = function () {
+                const backToTopButton = document.getElementById("back-to-top");
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    backToTopButton.style.display = "block";
+                    backToTopButton.style.opacity = "1";
+                } else {
+                    backToTopButton.style.opacity = "0";
+                    setTimeout(() => {
+                        backToTopButton.style.display = "none";
+                    }, 300);
+                }
+            };
+
+            document.getElementById("back-to-top").onclick = function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            };
+        });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const seeMoreBtn = document.getElementById("see-more-btn");
+        const galleryImages = document.querySelectorAll(".gallery-image");
+
+        // Initially show only the first 5 images
+        galleryImages.forEach((image, index) => {
+            if (index >= 5) {
+                image.style.display = "none";
+            }
+        });
+
+        // Toggle visibility of all images when "See More" is clicked
+        seeMoreBtn.addEventListener("click", function () {
+            galleryImages.forEach((image) => {
+                image.style.display = "block";
+            });
+            seeMoreBtn.style.display = "none"; // Hide the button after showing all images
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const seeMoreBtn = document.getElementById("see-more-btn");
+        const galleryItems = document.querySelectorAll(".gallery-item");
+
+        // Initially show only the first 5 items
+        galleryItems.forEach((item, index) => {
+            if (index >= 5) {
+                item.style.display = "none";
+            }
+        });
+
+        // Toggle visibility of all items when "See More" is clicked
+        seeMoreBtn.addEventListener("click", function () {
+            galleryItems.forEach((item) => {
+                item.style.display = "block";
+            });
+            seeMoreBtn.style.display = "none"; // Hide the button after showing all items
+        });
+    });
     document.addEventListener("DOMContentLoaded", function () {
       const mediaItems = document.querySelectorAll('.gallery-item');
       const lightbox = document.getElementById('lightbox');
@@ -271,6 +343,7 @@
   </script>
 </body>
 </html>
+
 
 
 
