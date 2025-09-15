@@ -1,491 +1,606 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RVNS Solutions</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-	<meta name="viewport" content="width=1024">
-	<meta name="description" content="RVNS Solutions - Software Training Institute for Python, Java, Web Development.">
-	<title>RVNS Solutions | Best Software Training Institute</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RVNS Solutions – IT Training, Internships, Projects & Development</title>
+<meta name="description" content="Transform your future with expert IT training, internships, live projects, custom development, and career placement support." />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- AOS Animation -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+<!-- Bootstrap Icons & FontAwesome -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet" />
 
-<meta name="description" content="RVNS Solutions offers expert training in Python, Java, Full Stack, Web Development, and more. Learn job-ready skills with real-time projects.">
+<style>
+body { font-family: 'Poppins', sans-serif; background:#f5f8fa; color: #1d2d50; margin:0; }
+.navbar { background: #0a2239; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+.navbar-brand { color: #16db93 !important; font-weight: 700; font-size: 1.6rem; }
+.nav-link { color: #dce3e8 !important; font-weight: 600; }
+.nav-link:hover, .nav-link.active { color: #16db93 !important; }
 
-<meta name="keywords" content="RVNS Solutions, software training, Python, Java, Web development, Full Stack, Vijayawada training institute,RVNSSolutions, software training, Python, Java, Web Development, projects,Internship,Vijayawada,Hyderabad,Banglore,btech projects, certificate for internships, RVNS,kurnool,adoni,best training institute,low cost">
+.hero-section { min-height: 44vh; display:flex; align-items:center; justify-content:center; text-align:center; background:linear-gradient(135deg, #0a2239, #16db93); color:white; padding: 0 1.0rem;}
+.hero-content h1 { font-weight:850; font-size:2.3rem; margin-bottom:0.6rem; }
+.animated-text { font-weight:700; font-size:1.25rem; min-height:44px; color:#ffeb3b; margin-bottom:0.6rem; }
+.hero-content p { font-size:1.1rem; margin-bottom:0.8rem; }
+.btn-explore, .btn-contact { background:#16db93; padding:5px 25px; border:none; border-radius:30px; color:#0a2239; font-weight:700; font-size:1.06rem; box-shadow:0 5px 16px #0a223980; transition:.18s; }
+.btn-explore:hover, .btn-contact:hover { background:#12b880; color:white; }
+.btn-contact { background: none; border:2px solid #16db93; color:white; margin-left:8px;}
+.btn-contact:hover { background:#16db93; color:#0a2239;}
 
-<meta name="author" content="RVNS Solutions">
+.stats-section { background:#dff6f0; padding:3rem 1rem; }
+.stats-box { background:white; border-radius:12px; padding:2rem 1rem; box-shadow:0 2px 12px rgba(0,0,0,.05); text-align:center; transition: transform 0.3s; }
+.stats-box:hover { transform:translateY(-8px); box-shadow:0 8px 30px rgba(22,219,147,0.13);}
+.stats-box h2 { color:#16db93; font-weight:900; font-size:2rem; }
+.stats-box p { font-weight:600; color:#1d2d50; }
 
-<meta name="robots" content="index, follow">
+.section-title { font-weight:800; color:#0a2239; text-align:center; margin-bottom:2rem; }
 
-<meta property="og:title" content="RVNS Solutions | Best Software Training Institute">
-<meta property="og:description" content="Join RVNS Solutions to become job-ready in Python, Java, Full Stack and more.">
-<meta property="og:url" content="https://www.rvnssolutions.online">
-<meta property="og:type" content="website">
+.card { border:none; border-radius:16px; box-shadow:0 4px 14px rgba(0,0,0,.07); padding:1.5rem; text-align:center; height:100%; transition: box-shadow 0.3s ease, transform 0.3s;}
+.card:hover { box-shadow:0 8px 28px rgba(0,0,0,.09); transform: translateY(-6px);}
+.card-title { color:#16db93; font-weight:700; margin-bottom:0.75rem;}
+.feature-icon { font-size:2.3rem; margin-bottom:0.85rem; }
+.icon-java{color:#f89820;} .icon-data{color:#4b6cff;} .icon-web{color:#4caf50;}
+.icon-internship{color:#a332e3;} .icon-project{color:#e91e63;}
+.icon-dev-web{color:#2196f3;} .icon-dev-mobile{color:#ff5722;} .icon-dev-cloud{color:#009688;}
+
+.section-btn {
+    margin: 32px auto 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.section-btn .btn-main {
+    background:#16db93;
+    color:#0a2239;
+    border:none;
+    border-radius:30px;
+    font-weight:700;
+    font-size:1rem;
+    padding:12px 36px;
+    box-shadow:0 2px 10px #16db9340;
+    transition:0.18s;
+}
+.section-btn .btn-main:hover {
+    background: #12b880;
+    color: #fff;
+}
+
+.best-feature { background:#dff6f0; border-radius:16px; padding:1.4rem; display:flex; align-items:center; box-shadow:0 4px 12px #16db9325; cursor: default; height:100%; }
+.best-feature i { font-size:2rem; color:#16db93; margin-right:0.6rem; }
+.best-feature div h6 { font-weight:700; color:#0a2239; font-size:1.13rem; margin-bottom:0.18rem;}
+.best-feature div small { color:#4a6572; font-weight:600; font-size:0.97rem; }
+
+.faq-section { background:#f8f9fa; padding:3rem 1rem; }
+.faq-item { margin-bottom:1rem;}
+.faq-item h6 { cursor:pointer; color:#0a2239;}
+.faq-item p { margin-top:0.3rem; color:#3a5873;}
+
+.footer-bg {
+  background-color: #0a2239;
+  color: #a7c7c4;
+  font-size: 0.95rem;
+}
+.footer-link {
+  color: #16db93;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-link:hover,
+.footer-link:focus {
+  color: #72ead6;
+  text-decoration: underline;
+}
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem 0;
+}
+.footer-column {
+  flex: 1 1 220px;
+  padding: 0 1rem;
+  margin-bottom: 1.5rem;
+}
+.footer-logo {
+  height: 50px;
+  margin-bottom: 1rem;
+}
+.newsletter-form {
+  display: flex;
+  max-width: 300px;
+}
+.newsletter-form input[type="email"] {
+  flex-grow: 1;
+  padding: 8px 12px;
+  border-radius: 30px 0 0 30px;
+  border: none;
+  font-size: 0.9rem;
+}
+.newsletter-form button {
+  background-color: #16db93;
+  border: none;
+  color: #0a2239;
+  padding: 8px 16px;
+  border-radius: 0 30px 30px 0;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.newsletter-form button:hover {
+  background-color: #12b880;
+}
+.social-icons a {
+  font-size: 1.6rem;
+  margin-right: 12px;
+  color: #16db93;
+  transition: color 0.3s ease;
+}
+.social-icons a:hover {
+  color: #72ead6;
+}
+
+.call-float, .wa-float { position:fixed; right:20px; width:56px; height:56px; display:flex; align-items:center; justify-content:center; border-radius:50%; color:white; font-size:1.4rem; z-index:1000; cursor:pointer;}
+.call-float { bottom:20px; background:#16db93; box-shadow:0 5px 20px #16db9380;}
+.call-float:hover { background:#12b880;}
+.wa-float { bottom:90px; background:#25d366; box-shadow:0 6px 26px #25d366bb;}
+.wa-float:hover { background:#1ebe5d;}
+
+@media(max-width:768px){
+.hero-section { min-height:36vh; }
+.hero-content h1 { font-size:1.45rem; }
+.animated-text { font-size:1rem; }
+.btn-explore, .btn-contact { width:100%; margin-bottom:8px; }
+.card { margin-bottom:1rem; }
+.footer-columns { flex-direction: column; }
+.footer-column { margin-bottom: 2rem; max-width: 100%; padding: 0; }
+.newsletter-form { max-width: 100%; }
+}
+.footer-logo {
+  height: 60px;           /* Adjust size to optimal height */
+  margin-bottom: 12px;    /* Space below logo */
+  border-radius: 6px;     /* Rounded corners for smooth edges */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* Soft shadow for subtle depth */
+  object-fit: contain;    /* Maintain aspect ratio */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;     /* Center horizontally in footer column */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.footer-logo:hover {
+  transform: scale(1.05); /* Slight zoom on hover for interactivity */
+}
+
+</style>
+
 </head>
 <body>
-<!-- Header -->
-<!-- Header -->
-<header>
-    <div class="container" style="display: flex; align-items: center; justify-content: flex-start; padding: 25px 35px; background: linear-gradient(to right, #1F3C61, #6A4C93); border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
-        
-        <!-- Logo Image -->
-        <div class="logo" style="flex-shrink: 0; width: 150px; height: 150px; margin-right: 30px; border-radius: 50%; overflow: hidden; border: 3px solid white; box-shadow: 0 0 12px rgba(0,0,0,0.3);">
-            <img src="vxl.jpg" alt="RVNS Solutions Logo" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #0a2239;">
+  <div class="container">
+    <a class="navbar-brand" href="index.html" style="font-weight:700; color:#16db93; letter-spacing: 1.5px; font-family: 'Poppins', sans-serif; font-size: 1.5rem;">
+      RVNS Solutions
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" 
+      aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" style="background-image: url('data:image/svg+xml;charset=utf8,%3csvg viewBox=%270 0 30 30%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath stroke=%27rgba(255,255,255,1)%27 stroke-width=%273%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e');"></span>
+    </button>
 
-        <!-- Company Name and Tagline -->
-        <div class="text-content" style="text-align: left; color: white; padding-left: 20px; max-width: 70%;">
-            
-            <!-- Company Name -->
-            <div class="title" style="font-size: 72px; font-weight: 900; color: #FF6347; letter-spacing: 3px; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);">
-                RVNS <span style="color: #FFD700; font-size: 58px;">SOLUTIONS</span>
-            </div>
-
-            <!-- Tagline -->
-            <div class="tagline" style="font-size: 22px; font-weight: 600; color: #FFD700; margin-top: 5px; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);">
-                Unlock Your Future In-Demand Skills
-            </div>
-
-            <!-- Highlight Section -->
-            <div class="highlight" style="font-size: 18px; font-weight: 600; margin-top: 10px; color: #f1f1f1; letter-spacing: 1px;">
-                TRAINING | INTERNSHIP | PROJECTS &nbsp; | &nbsp; INDUSTRIAL TRAINING | PLACEMENT ASSISTANCE
-            </div>
-
-            <!-- Sub-Text for Services -->
-            <div class="sub-text" style="font-size: 16px; margin-top: 8px; color: #B0E0E6; white-space: nowrap;">
-                Quality Training: C, DS, JAVA, PYTHON, WEB DEVELOPMENT, CYBER SECURITY, DIGITAL MARKETING, DATA SCIENCE
-            </div>
-        </div>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto text-uppercase">
+        <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+        <li class="nav-item"><a href="internships.html" class="nav-link">Internships</a></li>
+        <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="development.html" class="nav-link">Development</a></li>
+        <li class="nav-item"><a href="career.php" class="nav-link">Career</a></li>
+        <li class="nav-item"><a href="feedback.php" class="nav-link">FAQ</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
     </div>
-</header>
+  </div>
+</nav>
+
+<style>
+.navbar-brand {
+  font-weight: 700;
+  color: #16db93 !important;
+  letter-spacing: 1.5px;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: #16db93;
+  font-weight: 600;
+  padding: 0.45rem 0.75rem;
+  transition: color 0.3s ease;
+  letter-spacing: 0.04em;
+}
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: #a7ffdb;
+  outline: none;
+}
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #a7ffdb;
+  font-weight: 700;
+  border-bottom: 3px solid #16db93;
+  padding-bottom: 0.35rem;
+}
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+</style>
+
+<!-- Bootstrap 5 JS (required for toggler) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
-<!-- Navigation -->
+<style>
+  .navbar-brand {
+    font-weight: 700;
+    color: #16db93 !important;
+    letter-spacing: 1.5px;
+  }
+  .navbar-dark .nav-link {
+    color: #16db93;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  .navbar-dark .nav-link:hover,
+  .navbar-dark .nav-link:focus {
+    color: #a7ffdb;
+    outline: none;
+  }
+  .navbar-dark .nav-link.active {
+    color: #a7ffdb;
+    font-weight: 700;
+    border-bottom: 3px solid #16db93;
+    padding-bottom: 0.35rem;
+  }
+  .navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='%2316db93' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+</style>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="internship.html">Internships</a></li>
-            <li><a href="project.html">Projects</a></li>
-            <li><a href="gallary.html">Gallery</a></li>
-            <li><a href="feedback.html">Feedback</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-    <!-- Home Section -->
-<section id="home">
-    <div class="slider">
-        <!-- Initial Image -->
-        <div class="slide active" style="background-image: url('2.jpg');"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Other Images -->
-        <div class="slide" style="background-image: url('8.jpg');"></div>
-        <div class="slide" style="background-image: url('2.jpg');"></div>
-        <div class="slide" style="background-image: url('1.jpg');"></div>
-        <div class="slide" style="background-image: url('3.jpg');"></div>
-        <div class="slide" style="background-image: url('4.jpg');"></div>
-        <div class="slide" style="background-image: url('6.jpg');"></div>
-    </div>
+<script>
+  // Automatically set active nav-link based on current URL pathname
+  (function() {
+    const navLinks = document.querySelectorAll('#navMenu .nav-link');
+    const currentPath = window.location.pathname.split("/").pop().toLowerCase();
+    navLinks.forEach(link => {
+      let href = link.getAttribute('href').toLowerCase();
+      if (href === currentPath || (href === 'index.html' && (currentPath === '' || currentPath === 'index.php'))) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      }
+    });
+  })();
+</script>
 
-        <div class="home-content">
-            <h1>Welcome to RVNS Solutions</h1>
-            <h3>Empowering Careers, One Step at a Time</h3>
-            <p>We provide expert-led training, hands-on internships, and complete project guidance to help you succeed in the IT industry.</p>
-            <div class="cta-buttons">
-                <a href="#courses" class="btn">Explore Courses</a>
-                <a href="#internships" class="btn">Join Internship</a>
-                <a href="#contact" class="btn">Get in Touch</a>
-            </div>
-        </div>
-    </section>
 
-<!-- About Section -->
-<section id="about" style="padding: 50px 20px; background-color: #f4f4f4; font-family: Arial, sans-serif;">
-    <h2 style="text-align: center; font-size: 32px; color: #1F3C61; margin-bottom: 30px;">About Us</h2>
 
-    <div class="about-content" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; max-width: 1100px; margin: 0 auto; gap: 30px;">
-        
-        <!-- Circular Director Image -->
-        <div style="flex: 1 1 250px; max-width: 250px;">
-            <img src="director.jpg" alt="Director" class="director-img" style="width: 100%; height: 250px; object-fit: cover; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-        </div>
+<style>
+  /* Nav link color overrides */
+  .navbar-dark .navbar-nav .nav-link {
+    color: #16db93;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  .navbar-dark .navbar-nav .nav-link.active,
+  .navbar-dark .navbar-nav .nav-link:hover {
+    color: #a1f5d0;
+  }
+</style>
 
-        <!-- About Text -->
-        <div style="flex: 2 1 600px;">
-            <p style="font-size: 16px; color: #333; line-height: 1.7; text-align: justify;">
-                <strong>RVNS SOLUTIONS</strong> is a leading educational institute dedicated to providing high-quality software training programs. We are committed to empowering students and professionals with practical, industry-relevant skills that enable them to excel in today’s fast-paced technology-driven world. Our programs cover programming languages, full-stack development, data science, and other essential software skills.
-                <br><br>
-                Since our inception, we have delivered an exceptional learning experience that emphasizes not just theory but also real-world practice. Our mission is to prepare learners for the dynamic demands of the tech industry with confidence and competence.
-            </p>
-        </div>
-    </div>
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-content" data-aos="fade-up">
+    <h1>Unleash Your IT Potential with India’s Leading Mentor Platform</h1>
+    <div class="animated-text" id="typed-text"></div>
+    <p>RVNS Solutions delivers powerful career-focused training, project-based internships, and cutting-edge development to drive your success in tech and beyond.</p>
+    <a href="courses.html" class="btn-explore">Explore All Programs</a><pre></pre>
+    <a href="contact.html" class="btn-contact">Contact Us</a>
+  </div>
 </section>
 
-
+<!-- Stats -->
+<section class="stats-section" data-aos="fade-up">
+  <div class="container">
+    <div class="row text-center g-4 justify-content-center">
+      <div class="col-md-3 stats-box"><h2>1000+</h2><p>Students Trained</p></div>
+      <div class="col-md-3 stats-box"><h2>95%</h2><p>Placement Rate</p></div>
+      <div class="col-md-3 stats-box"><h2>25+</h2><p>Courses & Technologies</p></div>
+      <div class="col-md-3 stats-box"><h2>2+</h2><p>Years of Excellence</p></div>
+    </div>
+  </div>
+</section>
 
 <!-- Courses Section -->
-<section id="courses">
-    <h2>Our Courses</h2>
-    <div class="course-list">
-        <!-- C Programming -->
-        <div class="course">
-            <img src="c.jpeg" alt="C Programming">
-            <h3>C Programming</h3>
-            <p>Learn the basics of C programming and build a strong foundation in software development.</p>
-            <a href="https://forms.gle/msbsGspFor1faKBk6" class="btn apply-btn">Apply Now</a>
+<section class="py-5" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-title">Our Courses</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card">
+          <i class="fas fa-laptop-code feature-icon icon-java"></i>
+          <h5 class="card-title">Programming Languages</h5>
+          <p>Java, Python, C++, and more. Learn via guided projects, labs, and expert mentorship.</p>
         </div>
-
-        <!-- C++ -->
-        <div class="course">
-            <img src="cpp.jpeg" alt="C++">
-            <h3>C++</h3>
-            <p>Master object-oriented programming with C++ and develop high-performance applications.</p>
-            <a href="https://forms.gle/msbsGspFor1faKBk6" class="btn apply-btn">Apply Now</a>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <i class="fas fa-brain feature-icon icon-data"></i>
+          <h5 class="card-title">Data Science & AI</h5>
+          <p>Analytics, machine learning, and AI frameworks for tomorrow's tech world.</p>
         </div>
-
-        <!-- Java -->
-        <div class="course">
-            <img src="java.png" alt="Java">
-            <h3>Java</h3>
-            <p>Learn Java programming for building scalable and platform-independent applications.</p>
-            <a href="https://forms.gle/msbsGspFor1faKBk6" class="btn apply-btn">Apply Now</a>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <i class="fas fa-globe feature-icon icon-web"></i>
+          <h5 class="card-title">Full Stack Web</h5>
+          <p>Build real web applications with React, Node, and Django.</p>
         </div>
-
-        <!-- Python -->
-        <div class="course">
-            <img src="python.jpeg" alt="Python">
-            <h3>Python</h3>
-            <p>Explore Python for web development, data analysis, machine learning, and more.</p>
-            <a href="https://forms.gle/msbsGspFor1faKBk6" class="btn apply-btn">Apply Now</a>
-        </div>
-
-        <!-- Machine Learning -->
-        <div class="course">
-            <img src="ml.jpeg" alt="Machine Learning">
-            <h3>Artificial Intelligence & Machine Learning</h3>
-            <p>Dive into machine learning algorithms and build intelligent systems.</p>
-            <a href="https://forms.gle/msbsGspFor1faKBk6" class="btn apply-btn">Apply Now</a>
-        </div>
-
-        <!-- Data Science -->
-        <div class="course"> 
-            <img src="ds.jpeg" alt="Data Science">
-            <h3>Data Science</h3>
-            <p>Learn data analysis, visualization, and machine learning for data-driven decision-making.</p>
-            <a href="https://forms.gle/msbsGspFor1faKBk6" class="btn apply-btn">Apply Now</a>
-        </div>
-
-        <!-- .NET -->
-        <div class="course">
-            <img src="dotnet.jpeg" alt=".NET">
-            <h3>.NET</h3>
-            <p>Build robust web and desktop applications using the .NET framework.</p>
-            <a href="https://forms.gle/msbsGspFor1faKBk6" class="btn apply-btn">Apply Now</a>
-        </div>
-
-        <!-- Web Development -->
-        <div class="course">
-            <img src="web.jpeg" alt="Web Development">
-            <h3>Web Development</h3>
-            <p>Learn front-end and back-end development to create dynamic websites.</p>
-            <a href="https://forms.gle/msbsGspFor1faKBk6" class="btn apply-btn">Apply Now</a>
-        </div>
-
-        <!-- Digital Marketing -->
-        <div class="course">
-            <img src="digital.png" alt="Digital Marketing">
-            <h3>Digital Marketing</h3>
-            <p>Master SEO, social media marketing, and online advertising strategies.</p>
-            <a href="https://forms.gle/msbsGspFor1faKBk6" class="btn apply-btn">Apply Now</a>
-        </div>
-
-        <!-- Cyber Security -->
-        <div class="course">
-            <img src="cyber.jpeg" alt="Cyber Security">
-            <h3>Cyber Security</h3>
-            <p>Learn to protect systems and networks from cyber threats and attacks.</p>
-            <a href="https://forms.gle/msbsGspFor1faKBk6" class="btn apply-btn">Apply Now</a>
-        </div>
-
-        <!-- Hadoop -->
-        <div class="course">
-            <img src="hadoop.jpeg" alt="Hadoop">
-            <h3>Hadoop</h3>
-            <p>Explore big data processing and analytics using Hadoop ecosystems.</p>
-            <a href="https://forms.gle/msbsGspFor1faKBk6" class="btn apply-btn">Apply Now</a>
-        </div>
+      </div>
     </div>
+    <div class="section-btn"><a href="courses.html" class="btn-main">View All Courses</a></div>
+  </div>
 </section>
 
 <!-- Internships Section -->
-<section id="internships">
-    <h2>Internships</h2>
-<p>Our internship program is available in online and offline modes, offering hands-on experience and industry exposure. Offline internships provide real-time project work under expert guidance in a professional setting, while online internships offer flexible learning through live sessions and mentor support. Both modes focus on skill development, real-world projects, and career growth. Interns receive a certificate upon completion. Interested candidates can apply by filling out the application form, and shortlisted applicants will be contacted.</p>
-
-    <div class="internship-list">
-        <!-- Python Full Stack -->
-        <div class="internship">
-            <img src="pf.jpeg" alt="Python Full Stack">
-            <h3>Python Full Stack</h3>
-            <p>Gain hands-on experience in Python Full Stack development.</p>
-            <a href="https://forms.gle/msbsGspFor1faKBk6" class="btn apply-btn">Apply Now</a>
+<section class="py-5 bg-light" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-title">Internship Programs</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-5">
+        <div class="card">
+          <i class="fas fa-user-clock feature-icon icon-internship"></i>
+          <h5 class="card-title">Short-Term Internships</h5>
+          <p>Accelerated skill-building, live mini projects, and certification for fast upskilling.</p>
         </div>
-
-        <!-- Java Full Stack -->
-        <div class="internship">
-            <img src="jf.jpeg" alt="Java Full Stack">
-            <h3>Java Full Stack</h3>
-            <p>Learn to build end-to-end applications using Java technologies.</p>
-            <a href="https://forms.gle/msbsGspFor1faKBk6" class="btn apply-btn">Apply Now</a>
+      </div>
+      <div class="col-md-5">
+        <div class="card">
+          <i class="fas fa-hourglass-half feature-icon icon-internship"></i>
+          <h5 class="card-title">Long-Term Internships</h5>
+          <p>Immersive real industry projects, professional mentorship, and placement support.</p>
         </div>
-
-        <!-- Web Development -->
-        <div class="internship">
-            <img src="wd.jpeg" alt="Web Development">
-            <h3>Web Development</h3>
-            <p>Master front-end and back-end web development technologies.</p>
-            <a href="https://forms.gle/msbsGspFor1faKBk6" class="btn apply-btn">Apply Now</a>
-        </div>
-
-        <!-- Digital Marketing -->
-        <div class="internship">
-            <img src="dm.jpeg" alt="Digital Marketing">
-            <h3>Digital Marketing</h3>
-            <p>Learn SEO, social media marketing, and online advertising strategies.</p>
-            <a href="https://forms.gle/msbsGspFor1faKBk6" class="btn apply-btn">Apply Now</a>
-        </div>
-
-        <!-- Data Science -->
-        <div class="internship">
-            <img src="data.jpeg" alt="Data Science">
-            <h3>Data Science</h3>
-            <p>Explore data analysis, machine learning, and data visualization techniques.</p>
-            <a href="https://forms.gle/msbsGspFor1faKBk6" class="btn apply-btn">Apply Now</a>
-        </div>
-
-        <!-- Python with ML -->
-        <div class="internship">
-            <img src="mli.jpeg" alt="Python with ML">
-            <h3>Python with ML</h3>
-            <p>Learn Python programming and machine learning algorithms.</p>
-            <a href="https://forms.gle/msbsGspFor1faKBk6" class="btn apply-btn">Apply Now</a>
-        </div>
-
-        <!-- IoT -->
-        <div class="internship">
-            <img src="iot.jpeg" alt="IoT">
-            <h3>IoT</h3>
-            <p>Work on Internet of Things projects for smart devices and automation.</p>
-            <a href="https://forms.gle/msbsGspFor1faKBk6" class="btn apply-btn">Apply Now</a>
-        </div>
+      </div>
     </div>
+    <div class="section-btn"><a href="internships.html" class="btn-main">View All Internships</a></div>
+  </div>
 </section>
 
 <!-- Projects Section -->
-<section id="projects">
-    <h2>Our Projects</h2>
-    <p>Explore our innovative projects in various domains. Click "View Details" to see the complete list of project titles.</p>
-    <div class="project-grid">
-        <!-- Python Projects -->
-        <div class="project-card">
-            <img src="pp.png" alt="Python Projects">
-            <h3>Python Projects</h3>
-            <p>Machine Learning, Cloud, Security, AI, Django/Flask, Deep Learning, Network</p>
-            <a href="project titles.pdf" class="btn view-details-btn" target="_blank">View Details</a>
+<section class="py-5" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-title text-center">Live Projects</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card">
+          <i class="fas fa-desktop feature-icon icon-project"></i>
+          <h5 class="card-title">Web Applications</h5>
+          <p>Build and deploy scalable web platforms from idea to launch.</p>
         </div>
-
-        <!-- Java Projects -->
-        <div class="project-card">
-            <img src="jp.jpeg" alt="Java Projects">
-            <h3>Java Projects</h3>
-            <p>Enterprise applications, Spring Framework, Hibernate, and more.</p>
-            <a href="project titles.pdf" class="btn view-details-btn" target="_blank">View Details</a>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <i class="fas fa-mobile-alt feature-icon icon-project"></i>
+          <h5 class="card-title">Mobile Apps</h5>
+          <p>Develop Android/iOS apps that solve real-world problems, with modern UX.</p>
         </div>
-
-        <!-- IoT Projects -->
-        <div class="project-card">
-            <img src="iot.jpeg" alt="IoT Projects">
-            <h3>IoT Projects</h3>
-            <p>Smart devices, home automation, and IoT-based solutions.</p>
-            <a href="project titles.pdf" class="btn view-details-btn" target="_blank">View Details</a>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <i class="fas fa-cloud feature-icon icon-project"></i>
+          <h5 class="card-title">Cloud & IoT</h5>
+          <p>Integrate cloud solutions with IoT devices for smart, innovative tech.</p>
         </div>
+      </div>
     </div>
-</section>
-<!-- Gallery Section -->
-<section id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery-grid">
-        <!-- Images -->
-        <div class="gallery-item">
-            <img src="1.jpg" alt="Training Session" class="gallery-media">
-        </div>
-	<div class="gallery-item">
-            <video class="gallery-media" controls>
-                <source src="video1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video></div>
-        <div class="gallery-item">
-            <img src="2.jpg" alt="Project Session" class="gallery-media">
-        </div>
-        <div class="gallery-item">
-            <img src="3.jpg" alt="Team Work" class="gallery-media">
-        </div>
-      <div class="gallery-item">
-<video class="gallery-media" controls>
-                <source src="video2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="gallery-item">
-            <img src="4.jpg" alt="Internship" class="gallery-media">
-        </div>
-        <div class="gallery-item">
-            <img src="5.jpg" alt="Workshop" class="gallery-media">
-        </div>
-
-        <!-- Videos -->
-        
-  
-            
-        <div class="gallery-item">
-            <video class="gallery-media" controls>
-                <source src="video3.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <!-- Add more images or videos as needed -->
-    </div>
-    <button id="see-more-btn" class="btn">See More</button>
-</section>
-    <!-- Feedback Section -->
-    <section id="feedback">
-        <h2>What Our Students Say</h2>
-        <div class="feedback-stats">
-            <div class="stat">
-                <h3>⭐ 4.8/5</h3>
-                <p>Average Rating</p>
-            </div>
-            <div class="stat">
-                <h3>📈 500+</h3>
-                <p>Successful Placements</p>
-            </div>
-            <div class="stat">
-                <h3>🎓 10,000+</h3>
-                <p>Students Trained</p>
-            </div>
-        </div>
-        <div class="feedback-button">
-            <a href="https://forms.gle/CxAYfQXDfCrbygeA6" class="btn">Give Your Feedback</a>
-        </div>
-    </section>
-
-<!-- Contact Section -->
-<section id="contact">
-    <h2>Contact Us</h2>
-    <div class="contact-content">
-        <!-- Left Side: Director Image and Contact Details -->
-        <div class="contact-info">
-            <img src="director1.jpg" alt="Director" class="director-img1">
-<p>Managing Director: <strong> MR. A. VENKATA NARAYANA </strong></p>
-            <p>Email: <a href="mailto:rvnssolutions@gmail.com">rvnssolutions@gmail.com</a></p>
-<p>Phone: <a href="tel:+918328051076">+91 8328051076</a> / <a href="tel:+917036601035">+91 7036601035</a></p>
-
-            <p>Location: RVNS Solutions, 2nd floor , Babu plaza, Adoni Ho, Adoni, Kurnool(D), AP - 518301</p>
-        </div>
-
-        <!-- Right Side: Google Map -->
-        <div class="map-container">
-           <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d786278.4603998596!2d76.37786781457551!3d15.704716229218008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sbabu%20plaza%2C%20Adoni%20Ho%2C%20Adoni%2C%20Kurnool(D)%2C%20AP%20-%20518301!5e0!3m2!1sen!2sin!4v1746505638831!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </div>
+    <div class="section-btn"><a href="projects.html" class="btn-main">View All Projects</a></div>
+  </div>
 </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 RVNS Solutions. All rights reserved.</p>
-    </footer>
+<!-- Development Services -->
+<section class="py-5 bg-light" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-title text-center">Development Services</h2>
+    <p class="text-center mb-4">Custom software solutions for web, mobile, cloud, and enterprise — built for your growth.</p>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card">
+          <i class="fas fa-code feature-icon icon-dev-web"></i>
+          <h5 class="card-title">Web Development</h5>
+          <p>Responsive, secure, scalable websites crafted to elevate your brand.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <i class="fas fa-mobile-screen feature-icon icon-dev-mobile"></i>
+          <h5 class="card-title">Mobile Development</h5>
+          <p>Custom Android/iOS apps with flawless UX for your audience.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <i class="fas fa-network-wired feature-icon icon-dev-cloud"></i>
+          <h5 class="card-title">Cloud/API Solutions</h5>
+          <p>Cloud setup, APIs, and automations that scale with your business.</p>
+        </div>
+      </div>
+    </div>
+    <div class="section-btn"><a href="development.html" class="btn-main">View All Services</a></div>
+  </div>
+</section>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" title="Go to top">↑</button>
+<!-- Why Us -->
+<section class="py-5" data-aos="fade-up">
+  <div class="container text-center">
+    <h2 class="section-title">Why Choose RVNS Solutions?</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-3">
+        <div class="best-feature">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <div><h6>Expert Mentors</h6><small>Learn from leaders with real-world expertise</small></div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="best-feature">
+          <i class="fas fa-briefcase"></i>
+          <div><h6>Career Focus</h6><small>Guided roadmap and placement boost</small></div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="best-feature">
+          <i class="fas fa-code"></i>
+          <div><h6>Real Projects</h6><small>Work on practical solutions, not just theory</small></div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="best-feature">
+          <i class="fas fa-cogs"></i>
+          <div><h6>Development Excellence</h6><small>Top software for businesses & startups</small></div>
+        </div>
+      </div>
+    </div>
+    <p class="fst-italic mt-4" style="color:#3a5873;">
+      "Learn, build, and grow with RVNS Solutions — your trusted partner for IT excellence."
+    </p>
+  </div>
+</section>
 
-    <!-- JavaScript -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let slides = document.querySelectorAll(".slide");
-            let index = 0;
+<!-- FAQ Section -->
+<section class="faq-section" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h6>What IT programs do you offer?</h6>
+      <p>We offer comprehensive programs in programming, data science, web/mobile development, and business software, all led by acclaimed instructors.</p>
+    </div>
+    <div class="faq-item">
+      <h6>How do internships work?</h6>
+      <p>Choose short or long-term internships for real experience. Each includes hands-on projects, mentoring, and placement support.</p>
+    </div>
+    <div class="faq-item">
+      <h6>Do you provide business development services?</h6>
+      <p>Yes! We build scalable web, mobile, and cloud technology customized for your organization or startup.</p>
+    </div>
+    <div class="faq-item">
+      <h6>Will I get placement assistance?</h6>
+      <p>Absolutely. We provide ongoing career support and connect you with job opportunities on completion.</p>
+    </div>
+  </div>
+</section>
 
-            function changeSlide() {
-                slides.forEach(slide => slide.classList.remove("active"));
-                slides[index].classList.add("active");
-                index = (index + 1) % slides.length;
-            }
+<!-- Footer -->
+<footer class="footer-bg bg-dark text-light py-5" role="contentinfo" aria-label="Site Footer">
+  <div class="container">
+    <div class="row gy-4 justify-content-between">
+      
+      <div class="col-12 col-md-3 text-center text-md-start">
+        <img src="logo1.jpg" alt="RVNS Solutions" class="img-fluid mb-3" style="max-width: 160px;" />
+        <p class="fst-italic" style="max-width: 280px; margin: 0 auto 0 auto; font-size: 0.9rem;">
+          Empowering your IT journey with skills, projects, and innovation.
+        </p>
+      </div>
+      
+      <div class="col-6 col-md-2">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled lh-lg mb-0">
+          <li><a href="about.html" class="footer-link text-light text-decoration-none">About Us</a></li>
+          <li><a href="courses.html" class="footer-link text-light text-decoration-none">Courses</a></li>
+          <li><a href="internships.html" class="footer-link text-light text-decoration-none">Internships</a></li>
+          <li><a href="projects.html" class="footer-link text-light text-decoration-none">Projects</a></li>
+          <li><a href="contact.html" class="footer-link text-light text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+      
+<div class="col-12 col-md-3 text-center text-md-start">
+  <h5>Contact Us</h5>
+  <p><i class="bi bi-geo-alt-fill me-2"></i>Adoni, Andhra Pradesh, India</p>
+  <p><i class="bi bi-telephone-fill me-2"></i>
+    <a href="tel:+918247026944" class="footer-link text-light text-decoration-none">+91 8247026944</a>
+  </p>
+  <p class="mb-0">
+    <i class="bi bi-envelope-fill me-2"></i>
+    <a href="mailto:rvnssolutions@gmail.com" class="footer-link text-light text-decoration-none"
+       style="word-break: break-all; white-space: normal;">
+      rvnssolutions@gmail.com
+    </a>
+  </p>
+</div>
 
-            setInterval(changeSlide, 3000);
+      
+      <div class="col-12 col-md-3 text-center text-md-start">
+        <h5>Subscribe to Our Newsletter</h5>
+        <form onsubmit="event.preventDefault(); alert('Subscribed!');" class="d-flex flex-column flex-sm-row align-items-center" style="max-width: 320px; margin: auto;">
+          <input type="email" placeholder="Enter your email" required aria-label="Email" class="form-control mb-2 mb-sm-0 me-sm-2" />
+          <button type="submit" class="btn btn-primary w-100 w-sm-auto px-4">Subscribe</button>
+        </form>
+        <div class="social-icons mt-3 d-flex justify-content-center justify-content-md-start gap-3" style="font-size: 1.2rem;">
+          <a href="https://www.facebook.com/share/1YvMWSFs6M/" aria-label="Facebook" class="text-light;" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://x.com/rvnssolutions?t=0483Kkxv4J7BLPZRRg4ryg&s=08" aria-label="Twitter" class="text-light" target="_blank"><i class="bi bi-twitter"></i></a>
+          <a href="https://www.instagram.com/rvns_solutions?igsh=aGpwazMzZTlzMjUy" aria-label="Instagram" class="text-light" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/rvns-solutions-pvt-ltd-8a5278383" aria-label="LinkedIn" class="text-light" target="_blank"><i class="bi bi-linkedin"></i></a>
+          <a href="https://youtube.com/@rvns-solutions?si=_4U5xgGO_9LJ9Lsr" aria-label="YouTube" class="text-light" target="_blank"><i class="bi bi-youtube"></i></a>
+          <a href="https://wa.me/918247026944" aria-label="WhatsApp" class="text-light" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center text-light small mt-4" style="opacity: 0.65;">
+      <a href="privacy.html" class="footer-link text-light text-decoration-none me-3">Privacy Policy</a>
+      <a href="terms.html" class="footer-link text-light text-decoration-none">Terms of Service</a>
+      <p class="mt-2 mb-0">
+  © 2024–<span id="year"></span> RVNS Solutions. All rights reserved.
+</p>
 
-            window.onscroll = function () {
-                const backToTopButton = document.getElementById("back-to-top");
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    backToTopButton.style.display = "block";
-                    backToTopButton.style.opacity = "1";
-                } else {
-                    backToTopButton.style.opacity = "0";
-                    setTimeout(() => {
-                        backToTopButton.style.display = "none";
-                    }, 300);
-                }
-            };
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
-            document.getElementById("back-to-top").onclick = function () {
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-            };
-        });
+    </div>
+  </div>
+</footer>
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const seeMoreBtn = document.getElementById("see-more-btn");
-        const galleryImages = document.querySelectorAll(".gallery-image");
+<!-- Bootstrap 5 JS bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-        // Initially show only the first 5 images
-        galleryImages.forEach((image, index) => {
-            if (index >= 5) {
-                image.style.display = "none";
-            }
-        });
 
-        // Toggle visibility of all images when "See More" is clicked
-        seeMoreBtn.addEventListener("click", function () {
-            galleryImages.forEach((image) => {
-                image.style.display = "block";
-            });
-            seeMoreBtn.style.display = "none"; // Hide the button after showing all images
-        });
-    });
+<!-- Floating Call & WhatsApp Buttons -->
+<a href="tel:+918328051076" class="call-float" aria-label="Call Us"><i class="bi bi-telephone-fill"></i></a>
+<a href="https://wa.me/918247026944" class="wa-float" aria-label="WhatsApp Chat"><i class="bi bi-whatsapp"></i></a>
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const seeMoreBtn = document.getElementById("see-more-btn");
-        const galleryItems = document.querySelectorAll(".gallery-item");
+<!-- JS Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+AOS.init({duration:900});
 
-        // Initially show only the first 5 items
-        galleryItems.forEach((item, index) => {
-            if (index >= 5) {
-                item.style.display = "none";
-            }
-        });
+new Typed('#typed-text', {
+  strings: [
+    "Transform Your Future with Industry-Ready IT Skills",
+    "Hands-On Projects That Build Real Expertise",
+    "Launch Your Career with Expert Mentorship",
+    "Custom Software Development for Bold Ideas",
+    "Internships to Ignite Your Learning Journey",
+    "Reliable Placement Assistance for Career Growth",
+    "Future-Focused Training for Next-Gen Innovators"
+  ],
+  typeSpeed: 47,
+  backSpeed: 28,
+  backDelay: 1700,
+  loop: true,
+  shuffle: true,
+  showCursor: true,
+  cursorChar: '|'
+});
+</script>
 
-        // Toggle visibility of all items when "See More" is clicked
-        seeMoreBtn.addEventListener("click", function () {
-            galleryItems.forEach((item) => {
-                item.style.display = "block";
-            });
-            seeMoreBtn.style.display = "none"; // Hide the button after showing all items
-        });
-    });
-    </script>
 </body>
 </html>
-

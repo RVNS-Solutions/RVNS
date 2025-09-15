@@ -1,179 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RVNS Solutions</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta name="viewport" content="width=1024">
+  <meta charset="UTF-8" />
+  <title>Contact Us – RVNS Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap 5 & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    body, html {
+      margin: 0; padding: 0; min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background: #f5faf8;
+      color: #1e2c27;
+      display: flex;
+      flex-direction: column;
+    }
+    nav.navbar {
+      background: #0a2239;
+    }
+    nav .navbar-brand, nav .nav-link {
+      color: #16db93 !important;
+      font-weight: 600;
+    }
+    nav .nav-link.active, nav .nav-link:hover {
+      color: #a7ffdb !important;
+    }
+    header {
+      background: linear-gradient(135deg, #14c58d 0%, #0a2239 100%);
+      color: #fff;
+      padding: 4.2rem 1rem 2.7rem 1rem;
+      text-align: center;
+      box-shadow: 0 8px 40px rgba(20,205,141,0.15);
+    }
+    header h1 {
+      font-size: 2.3rem;
+      font-weight: 900;
+      margin-bottom: 0.6rem;
+      letter-spacing: 1px;
+      line-height: 1.1;
+    }
+    header p {
+      font-size: 1.08rem;
+      font-weight: 400;
+      opacity: 0.95;
+      max-width: 560px;
+      margin: 0 auto 0;
+    }
+    .contact-main {
+      width: 100%;
+      max-width: 700px;
+      margin: -3.2rem auto 2.7rem auto;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 8px 40px rgba(22,219,147,0.11);
+      padding: 2.5rem 2rem 2rem 2rem;
+      gap: 1.9rem;
+    }
+    .contact-info-title {
+      font-weight: 900;
+      font-size: 2rem;
+      color: #0a263f;
+      text-align: center;
+    }
+    .info-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    .info-row {
+      display: flex;
+      align-items: center;
+      gap: 1.15rem;
+      border-radius: 16px;
+      padding: 1.15rem 1rem;
+      background: #f2fdfa;
+      box-shadow: 0 2px 10px rgba(22,219,147,0.045);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #12523d;
+    }
+    .info-row .ci {
+      width: 28px; height: 28px; font-size: 1.5rem;
+      color: #16db93; flex-shrink: 0;
+    }
+    .info-main {
+      display: flex; flex-direction: column;
+    }
+    .info-main a {
+      color: #155848; text-decoration: none; font-size: 1.1rem; font-weight: bold;
+      transition: color 0.22s;
+    }
+    .info-main a:hover, .info-main a:focus {color: #14c58d; text-decoration: underline;}
+    .info-main small {color: #468768; font-weight: 400; margin-top: 1.5px;}
+    /* Social */
+    .social-bar {
+      text-align: center; margin-top: 0.1rem; margin-bottom: 0;
+    }
+    .social-bar a {
+      display: inline-block; margin: 0 0.7rem; font-size: 2rem; color: #16db93;
+      border-radius:50%; padding: 0.3em;
+      background: #eafff6; transition: color .22s, background .22s, transform .16s;
+      vertical-align: middle;
+    }
+    .social-bar a:hover, .social-bar a:focus {
+      color: #fff; background: #14c58d; transform: translateY(-3px) scale(1.07);
+      outline: none;
+    }
+    .social-bar a.whatsapp { color: #25D366; background:#f2fff9; }
+    .social-bar a.whatsapp:hover { background:#25D366; color:#fff;}
+    .social-bar a.linkedin { color: #0077b5; background:#e5f5fb; }
+    .social-bar a.linkedin:hover { background:#0077b5; color: #fff;}
+    /* Map */
+    .map-container {
+      width:100%; max-width:700px; margin: 2.7rem auto 0 auto;
+      border-radius:24px; overflow:hidden;
+      box-shadow: 0 10px 40px rgba(20,205,141,0.18);
+      height:320px;
+    }
+    .map-container iframe { width:100%; height:100%; border:none;}
+    /* Footer */
+    footer {
+      background: #0a2239;
+      color: #16db93;
+      font-weight: 600;
+      text-align: center;
+      padding: 1.05rem 0;
+      font-size: 1rem;
+      margin-top: auto;
+    }
+    @media (max-width: 640px) {
+      header h1 { font-size: 1.45rem;}
+      .contact-main { padding: 1.4rem 0.3rem; margin: -2rem 0.2rem 1.4rem 0.2rem;}
+      .info-cards .info-row { padding: 0.96rem 0.6rem; font-size: 1.01rem;}
+      .contact-info-title { font-size:1.17rem; }
+      .map-container { height: 170px;}
+      .social-bar a { font-size:1.5rem; margin: 0 0.5rem;}
+    }
+  </style>
 </head>
+<body>
 
-     <!-- Header -->
-     <header>
-        <div class="container" style="display: flex; align-items: center; justify-content: flex-start; padding: 25px 35px; background: linear-gradient(to right, #1F3C61, #6A4C93); border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
-            
-            <!-- Logo Image -->
-            <div class="logo" style="flex-shrink: 0; width: 150px; height: 150px; margin-right: 30px; border-radius: 50%; overflow: hidden; border: 3px solid white; box-shadow: 0 0 12px rgba(0,0,0,0.3);">
-                <img src="vxl.jpg" alt="RVNS Solutions Logo" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-    
-            <!-- Company Name and Tagline -->
-            <div class="text-content" style="text-align: left; color: white; padding-left: 20px; max-width: 70%;">
-                
-                <!-- Company Name -->
-                <div class="title" style="font-size: 72px; font-weight: 900; color: #FF6347; letter-spacing: 3px; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);">
-                    RVNS <span style="color: #FFD700; font-size: 58px;">SOLUTIONS</span>
-                </div>
-    
-                <!-- Tagline -->
-                <div class="tagline" style="font-size: 22px; font-weight: 600; color: #FFD700; margin-top: 5px; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);">
-                    Unlock Your Future In-Demand Skills
-                </div>
-    
-                <!-- Highlight Section -->
-                <div class="highlight" style="font-size: 18px; font-weight: 600; margin-top: 10px; color: #f1f1f1; letter-spacing: 1px;">
-                    TRAINING | INTERNSHIP | PROJECTS &nbsp; | &nbsp; INDUSTRIAL TRAINING | PLACEMENT ASSISTANCE
-                </div>
-    
-                <!-- Sub-Text for Services -->
-                <div class="sub-text" style="font-size: 16px; margin-top: 8px; color: #B0E0E6; white-space: nowrap;">
-                    Quality Training: C, DS, JAVA, PYTHON, WEB DEVELOPMENT, CYBER SECURITY, DIGITAL MARKETING, DATA SCIENCE
-                </div>
-            </div>
-        </div>
-    </header>
-    
+   <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #0a2239;">
+  <div class="container">
+    <a class="navbar-brand" href="index.html" style="font-weight:700; color:#16db93; letter-spacing: 1.5px; font-family: 'Poppins', sans-serif; font-size: 1.5rem;">
+      RVNS Solutions
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" 
+      aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" style="background-image: url('data:image/svg+xml;charset=utf8,%3csvg viewBox=%270 0 30 30%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath stroke=%27rgba(255,255,255,1)%27 stroke-width=%273%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e');"></span>
+    </button>
 
-   <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="internship.html">Internships</a></li>
-            <li><a href="project.html">Projects</a></li>
-            <li><a href="gallary.html">Gallery</a></li>
-            <li><a href="feedback.html">Feedback</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-
-<!-- Contact Section -->
-<!-- Contact Section -->
-<section id="contact">
-    <h2>Contact Us</h2>
-    <div class="contact-content">
-        <!-- Left Side: Director Image and Contact Details -->
-        <div class="contact-info">
-            <img src="director1.jpg" alt="Director" class="director-img1">
-<p>Managing Director: <strong> MR. A. VENKATA NARAYANA </strong></p>
-            <p>Email: <a href="mailto:rvnssolutions@gmail.com">rvnssolutions@gmail.com</a></p>
-<p>Phone: <a href="tel:+918328051076">+91 8328051076</a> / <a href="tel:+917036601035">+91 7036601035</a></p>
-
-            <p>Location:RVNS Solutions, 2nd floor , Babu plaza, Adoni Ho, Adoni, Kurnool(D), AP - 518301</p>
-        </div>
-
-        <!-- Right Side: Google Map -->
-        <div class="map-container">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.841317075926!2d80.648214315334!3d16.50641798865389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35eff9482d944b%3A0x939b7e84ab4a4b7b!2sVijayawada%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1632912345678!5m2!1sen!2sin"
-                width="100%"
-                height="300"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy">
-            </iframe>
-        </div>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto text-uppercase">
+        <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+        <li class="nav-item"><a href="internships.html" class="nav-link">Internships</a></li>
+        <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="development.html" class="nav-link">Development</a></li>
+        <li class="nav-item"><a href="career.php" class="nav-link">Career</a></li>
+        <li class="nav-item"><a href="feedback.php" class="nav-link">FAQ</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
     </div>
-</section>
+  </div>
+</nav>
+
+<style>
+.navbar-brand {
+  font-weight: 700;
+  color: #16db93 !important;
+  letter-spacing: 1.5px;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: #16db93;
+  font-weight: 600;
+  padding: 0.45rem 0.75rem;
+  transition: color 0.3s ease;
+  letter-spacing: 0.04em;
+}
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: #a7ffdb;
+  outline: none;
+}
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #a7ffdb;
+  font-weight: 700;
+  border-bottom: 3px solid #16db93;
+  padding-bottom: 0.35rem;
+}
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+</style>
+
+<!-- Bootstrap 5 JS (required for toggler) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 RVNS Solutions. All rights reserved.</p>
-    </footer>
+<header>
+  <h1>Contact RVNS Solutions</h1>
+  <p>Let's create great technology together. Reach out to us for business queries, partnerships, training collaborations, or support!</p>
+</header>
+<pre></pre>
+<div class="contact-main" aria-label="RVNS Solutions Contact Details">
+  <div class="contact-info-title">Contact Information</div>
+  <div class="info-cards">
+    <div class="info-row">
+      <i class="bi bi-geo-alt-fill ci" aria-hidden="true"></i>
+      <div class="info-main">
+        123 Visionary Lane, Tech City, Andhra Pradesh, 522xxx, India
+        <small>Landmark: Near Main IT Park, Adoni</small>
+      </div>
+    </div>
+    <div class="info-row">
+      <i class="bi bi-telephone-fill ci" aria-hidden="true"></i>
+      <div class="info-main">
+        <a href="tel:+918247026944" aria-label="Call RVNS Solutions">+91 8247026944</a>
+        <small>Mon–Fri: 9:00 AM – 6:00 PM</small>
+      </div>
+    </div>
+    <div class="info-row">
+      <i class="bi bi-envelope-fill ci" aria-hidden="true"></i>
+      <div class="info-main">
+        <a href="mailto:contact@rvnsolutions.com" aria-label="Email RVNS Solutions">rvnssolutions@gmail.com</a>
+        <small>24/7 Email Support</small>
+      </div>
+    </div>
+    <div class="info-row">
+      <i class="bi bi-globe2 ci" aria-hidden="true"></i>
+      <div class="info-main">
+        <a href="https://www.rvnssolutions.online" target="_blank" rel="noopener">www.rvnssolutions.online</a>
+      </div>
+    </div>
+        <div class="info-row">
+      <i class="bi bi-whatsapp"></i>
+      <div class="info-main">
+        <a href="https://wa.me/918247026944" target="_blank" rel="918247026944">91 8247026944</a>
+      </div>
+    </div>
+  </div>
+  <div class="text-center mt-5">
+    <h5 class="fw-bold mb-3">Follow Us</h5>
+    <a href="https://wa.me/918247026944" class="btn btn-outline-success btn-lg mx-2"><i class="bi bi-whatsapp"></i></a>
+    <a href="https://www.facebook.com/share/1YvMWSFs6M/" class="btn btn-outline-primary btn-lg mx-2"><i class="bi bi-facebook"></i></a>
+    <a href="https://x.com/rvnssolutions" class="btn btn-outline-dark btn-lg mx-2"><i class="bi bi-twitter-x"></i></a>
+    <a href="https://www.instagram.com/rvns_solutions" class="btn btn-outline-danger btn-lg mx-2"><i class="bi bi-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/rvns-solutions-pvt-ltd-8a5278383" class="btn btn-outline-info btn-lg mx-2"><i class="bi bi-linkedin"></i></a>
+    <a href="https://youtube.com/@rvns-solutions" class="btn btn-outline-danger btn-lg mx-2"><i class="bi bi-youtube"></i></a>
+  </div>
+</div>
+<div class="map-container" aria-label="RVNS Solutions Office Location" role="region">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3842.4506569278633!2d77.27800127489425!3d15.620972584995425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb64d23c0be5d51%3A0xe7e980d47ce3112!2sRVNS%20SOLUTIONS%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1757783068810!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div><br>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" title="Go to top">↑</button>
+<!-- Footer -->
+<footer class="footer-bg bg-dark text-light py-5" role="contentinfo" aria-label="Site Footer">
+  <div class="container">
+    <div class="row gy-4 justify-content-between">
+      
+      <div class="col-12 col-md-3 text-center text-md-start">
+        <img src="logo1.jpg" alt="RVNS Solutions" class="img-fluid mb-3" style="max-width: 160px;" />
+        <p class="fst-italic" style="max-width: 280px; margin: 0 auto 0 auto; font-size: 0.9rem;">
+          Empowering your IT journey with skills, projects, and innovation.
+        </p>
+      </div>
+      
+      <div class="col-6 col-md-2">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled lh-lg mb-0">
+          <li><a href="about.html" class="footer-link text-light text-decoration-none">About Us</a></li>
+          <li><a href="courses.html" class="footer-link text-light text-decoration-none">Courses</a></li>
+          <li><a href="internships.html" class="footer-link text-light text-decoration-none">Internships</a></li>
+          <li><a href="projects.html" class="footer-link text-light text-decoration-none">Projects</a></li>
+          <li><a href="contact.html" class="footer-link text-light text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+      
+<div class="col-12 col-md-3 text-center text-md-start">
+  <h5>Contact Us</h5>
+  <p><i class="bi bi-geo-alt-fill me-2"></i>Adoni, Andhra Pradesh, India</p>
+  <p><i class="bi bi-telephone-fill me-2"></i>
+    <a href="tel:+918247026944" class="footer-link text-light text-decoration-none">+91 8247026944</a>
+  </p>
+  <p class="mb-0">
+    <i class="bi bi-envelope-fill me-2"></i>
+    <a href="mailto:rvnssolutions@gmail.com" class="footer-link text-light text-decoration-none"
+       style="word-break: break-all; white-space: normal;">
+      rvnssolutions@gmail.com
+    </a>
+  </p>
+</div>
 
-    <!-- JavaScript -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let slides = document.querySelectorAll(".slide");
-            let index = 0;
+      
+      <div class="col-12 col-md-3 text-center text-md-start">
+        <h5>Subscribe to Our Newsletter</h5>
+        <form onsubmit="event.preventDefault(); alert('Subscribed!');" class="d-flex flex-column flex-sm-row align-items-center" style="max-width: 320px; margin: auto;">
+          <input type="email" placeholder="Enter your email" required aria-label="Email" class="form-control mb-2 mb-sm-0 me-sm-2" />
+          <button type="submit" class="btn btn-primary w-100 w-sm-auto px-4">Subscribe</button>
+        </form>
+        <div class="social-icons mt-3 d-flex justify-content-center justify-content-md-start gap-3" style="font-size: 1.2rem;">
+          <a href="https://www.facebook.com/share/1YvMWSFs6M/" aria-label="Facebook" class="text-light;" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://x.com/rvnssolutions?t=0483Kkxv4J7BLPZRRg4ryg&s=08" aria-label="Twitter" class="text-light" target="_blank"><i class="bi bi-twitter"></i></a>
+          <a href="https://www.instagram.com/rvns_solutions?igsh=aGpwazMzZTlzMjUy" aria-label="Instagram" class="text-light" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/rvns-solutions-pvt-ltd-8a5278383" aria-label="LinkedIn" class="text-light" target="_blank"><i class="bi bi-linkedin"></i></a>
+          <a href="https://youtube.com/@rvns-solutions?si=_4U5xgGO_9LJ9Lsr" aria-label="YouTube" class="text-light" target="_blank"><i class="bi bi-youtube"></i></a>
+          <a href="https://wa.me/918247026944" aria-label="WhatsApp" class="text-light" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center text-light small mt-4" style="opacity: 0.65;">
+      <a href="privacy.html" class="footer-link text-light text-decoration-none me-3">Privacy Policy</a>
+      <a href="terms.html" class="footer-link text-light text-decoration-none">Terms of Service</a>
+      <p class="mt-2 mb-0">
+  © 2024–<span id="year"></span> RVNS Solutions. All rights reserved.
+</p>
 
-            function changeSlide() {
-                slides.forEach(slide => slide.classList.remove("active"));
-                slides[index].classList.add("active");
-                index = (index + 1) % slides.length;
-            }
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
-            setInterval(changeSlide, 3000);
+    </div>
+  </div>
+</footer>
 
-            window.onscroll = function () {
-                const backToTopButton = document.getElementById("back-to-top");
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    backToTopButton.style.display = "block";
-                    backToTopButton.style.opacity = "1";
-                } else {
-                    backToTopButton.style.opacity = "0";
-                    setTimeout(() => {
-                        backToTopButton.style.display = "none";
-                    }, 300);
-                }
-            };
+<!-- Bootstrap 5 JS bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-            document.getElementById("back-to-top").onclick = function () {
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-            };
-        });
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const seeMoreBtn = document.getElementById("see-more-btn");
-        const galleryImages = document.querySelectorAll(".gallery-image");
-
-        // Initially show only the first 5 images
-        galleryImages.forEach((image, index) => {
-            if (index >= 5) {
-                image.style.display = "none";
-            }
-        });
-
-        // Toggle visibility of all images when "See More" is clicked
-        seeMoreBtn.addEventListener("click", function () {
-            galleryImages.forEach((image) => {
-                image.style.display = "block";
-            });
-            seeMoreBtn.style.display = "none"; // Hide the button after showing all images
-        });
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const seeMoreBtn = document.getElementById("see-more-btn");
-        const galleryItems = document.querySelectorAll(".gallery-item");
-
-        // Initially show only the first 5 items
-        galleryItems.forEach((item, index) => {
-            if (index >= 5) {
-                item.style.display = "none";
-            }
-        });
-
-        // Toggle visibility of all items when "See More" is clicked
-        seeMoreBtn.addEventListener("click", function () {
-            galleryItems.forEach((item) => {
-                item.style.display = "block";
-            });
-            seeMoreBtn.style.display = "none"; // Hide the button after showing all items
-        });
-    });
-
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

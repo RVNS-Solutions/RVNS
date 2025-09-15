@@ -1,236 +1,496 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RVNS Solutions</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta name="viewport" content="width=1024">
-    <style>
-        /* CSS for better styling */
-        .about-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-    
-        .director-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-right: 20px;
-        }
-    
-        .about-text {
-            font-size: 16px;
-            color: #333;
-            line-height: 1.7;
-            text-align: justify;
-        }
-    
-        section#vision, section#mission, section#core-values {
-            margin-top: 30px;
-        }
-    
-        section#vision h3, section#mission h3, section#core-values h3 {
-            font-size: 22px;
-            font-weight: bold;
-            color: #1a73e8;
-        }
-    
-        .core-values-list {
-            list-style-type: none;
-            padding-left: 0;
-        }
-    
-        .core-values-list li {
-            font-size: 16px;
-            margin-bottom: 15px;
-        }
-    
-        .core-values-list li strong {
-            color: #1a73e8;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>About Us - RVNS Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9fafb;
+      color: #222;
+      margin: 0;
+      padding-bottom: 4rem;
+      line-height: 1.6;
+    }
+    nav.navbar {
+      background: #0a2239;
+    }
+    nav .navbar-brand,
+    nav .nav-link {
+      color: #16db93 !important;
+      font-weight: 600;
+    }
+    nav .nav-link.active,
+    nav .nav-link:hover {
+      color: #a7ffdb !important;
+    }
+    main.container {
+      max-width: 960px;
+      margin: 3rem auto 5rem;
+      padding: 0 1rem;
+    }
+    h1, h2 {
+      font-weight: 900;
+      color: #0a263f;
+      margin-bottom: 1rem;
+    }
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.2rem; margin-top: 3rem; margin-bottom: 1.5rem; }
+    p {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+    ul.core-pillars {
+      list-style: disc inside;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      padding-left: 0;
+      color: #115f51;
+    }
+    ul.core-pillars li {
+      margin-bottom: 1rem;
+    }
+    /* Vision & Mission Boxes */
+    .vision-mission {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .vision-box, .mission-box {
+      flex: 1 1 320px;
+      background: #daf9ec;
+      padding: 2rem 1.8rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(22,219,147,0.15);
+      position: relative;
+      color: #115f51;
+    }
+    .vision-box svg,
+    .mission-box svg {
+      width: 48px;
+      height: 48px;
+      fill: #16db93;
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      opacity: 0.3;
+    }
+    .vision-mission h3 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: #0a263f;
+      font-weight: 800;
+      font-size: 1.8rem;
+    }
+    /* Team Section */
+    .team-section {
+      margin-top: 4rem;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+    .team-member {
+      background: white;
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 30px rgba(22,219,147,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .team-member:hover, .team-member:focus-within {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(22,219,147,0.25);
+      outline: none;
+    }
+    .team-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: contain;
+      margin-bottom: 1rem;
+      border: 3px solid #16db93;
+      transition: transform 0.3s ease;
+    }
+    .team-member:hover .team-photo,
+    .team-member:focus-within .team-photo {
+      transform: scale(1.05);
+    }
+    .team-name {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #0a263f;
+      margin-bottom: 0.3rem;
+    }
+    .team-title {
+      font-style: italic;
+      font-weight: 600;
+      color: #16db93;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    .team-bio {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.4;
+      min-height: 80px;
+    }
+    /* Contact CTA */
+    .contact-cta {
+      margin-top: 5rem;
+      text-align: center;
+      background: #16db93;
+      color: white;
+      padding: 3rem 1rem;
+      border-radius: 25px;
+      box-shadow: 0 8px 30px rgba(22, 219, 147, 0.3);
+      font-weight: 600;
+    }
+    .contact-cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .contact-cta p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left:auto;
+      margin-right:auto;
+      font-weight: 400;
+    }
+    .btn-contact, .btn-newsletter {
+      background: #0a263f;
+      color: #16db93;
+      border: none;
+      padding: 0.75rem 2rem;
+      font-weight: 700;
+      margin: 0 0.4rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-contact:hover, .btn-newsletter:hover {
+      background: #075237;
+      color: #b7f0d1;
+      text-decoration: none;
+    }
+    /* Video Introduction */
+    .video-section {
+      margin-top: 5rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      padding: 0 1rem;
+    }
+    .video-section h2 {
+      color: #0a263f;
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(22,219,147,0.15);
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 15px;
+    }
+    footer {
+      background: #0a2239;
+      color: #16db93;
+      text-align: center;
+      padding: 1.5rem;
+      font-weight: 600;
+    }
+    @media(max-width: 768px) {
+      main.container {
+        margin: 2rem 1rem 4rem;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+      .contact-cta h2 {
+        font-size: 1.8rem;
+      }
+      .contact-cta p {
+        font-size: 1.1rem;
+      }
+      p, ul.core-pillars {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-     <!-- Header -->
-     <header>
-        <div class="container" style="display: flex; align-items: center; justify-content: flex-start; padding: 25px 35px; background: linear-gradient(to right, #1F3C61, #6A4C93); border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
-            
-            <!-- Logo Image -->
-            <div class="logo" style="flex-shrink: 0; width: 150px; height: 150px; margin-right: 30px; border-radius: 50%; overflow: hidden; border: 3px solid white; box-shadow: 0 0 12px rgba(0,0,0,0.3);">
-                <img src="vxl.jpg" alt="RVNS Solutions Logo" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-    
-            <!-- Company Name and Tagline -->
-            <div class="text-content" style="text-align: left; color: white; padding-left: 20px; max-width: 70%;">
-                
-                <!-- Company Name -->
-                <div class="title" style="font-size: 72px; font-weight: 900; color: #FF6347; letter-spacing: 3px; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);">
-                    RVNS <span style="color: #FFD700; font-size: 58px;">SOLUTIONS</span>
-                </div>
-    
-                <!-- Tagline -->
-                <div class="tagline" style="font-size: 22px; font-weight: 600; color: #FFD700; margin-top: 5px; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);">
-                    Unlock Your Future In-Demand Skills
-                </div>
-    
-                <!-- Highlight Section -->
-                <div class="highlight" style="font-size: 18px; font-weight: 600; margin-top: 10px; color: #f1f1f1; letter-spacing: 1px;">
-                    TRAINING | INTERNSHIP | PROJECTS &nbsp; | &nbsp; INDUSTRIAL TRAINING | PLACEMENT ASSISTANCE
-                </div>
-    
-                <!-- Sub-Text for Services -->
-                <div class="sub-text" style="font-size: 16px; margin-top: 8px; color: #B0E0E6; white-space: nowrap;">
-                    Quality Training: C, DS, JAVA, PYTHON, WEB DEVELOPMENT, CYBER SECURITY, DIGITAL MARKETING, DATA SCIENCE
-                </div>
-            </div>
-        </div>
-    </header>
-    
-   <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="internship.html">Internships</a></li>
-            <li><a href="project.html">Projects</a></li>
-            <li><a href="gallary.html">Gallery</a></li>
-            <li><a href="feedback.html">Feedback</a></li>
-            <li><a href="contact.html">Contact</a></li>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #0a2239;">
+  <div class="container">
+    <a class="navbar-brand" href="index.html" style="font-weight:700; color:#16db93; letter-spacing: 1.5px; font-family: 'Poppins', sans-serif; font-size: 1.5rem;">
+      RVNS Solutions
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" 
+      aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" style="background-image: url('data:image/svg+xml;charset=utf8,%3csvg viewBox=%270 0 30 30%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath stroke=%27rgba(255,255,255,1)%27 stroke-width=%273%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e');"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto text-uppercase">
+        <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+        <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+        <li class="nav-item"><a href="internships.html" class="nav-link">Internships</a></li>
+        <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="development.html" class="nav-link">Development</a></li>
+        <li class="nav-item"><a href="career.php" class="nav-link">Career</a></li>
+        <li class="nav-item"><a href="feedback.php" class="nav-link">FAQ</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+.navbar-brand {
+  font-weight: 700;
+  color: #16db93 !important;
+  letter-spacing: 1.5px;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: #16db93;
+  font-weight: 600;
+  padding: 0.45rem 0.75rem;
+  transition: color 0.3s ease;
+  letter-spacing: 0.04em;
+}
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: #a7ffdb;
+  outline: none;
+}
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #a7ffdb;
+  font-weight: 700;
+  border-bottom: 3px solid #16db93;
+  padding-bottom: 0.35rem;
+}
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+</style>
+
+<!-- Bootstrap 5 JS (required for toggler) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+<!-- Bootstrap 5 JS (required for toggler) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<main class="container" role="main" aria-label="About RVNS Solutions">
+  <header data-aos="fade-down" data-aos-duration="900">
+    <h1>RVNS SOLUTIONS - Empowering Tomorrow’s Technology Leaders</h1>
+  </header>
+
+  <section class="overview" data-aos="fade-up" data-aos-duration="900" data-aos-delay="100">
+    <p>
+      At Reliable Visionary Network Software Solutions (RVNS SOLUTIONS), technology is the cornerstone of progress and innovation. We blend visionary thinking with unwavering reliability to deliver transformative software solutions, exceptional training programs, and real-world project experiences. Our mission is to drive digital evolution by equipping businesses and individuals with the tools, expertise, and support to excel in the fast-paced technology landscape.
+    </p>
+  </section>
+
+  <section class="vision-mission" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200">
+    <div class="vision-box" tabindex="0">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+        <path d="M12 4a8 8 0 108 8c0-4.418-3.582-8-8-8zm0 14a6 6 0 110-12 6 6 0 010 12zm1-13v2h-2V5h2zm-1 12a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/>
+      </svg>
+      <h3>Our Vision</h3>
+      <p>To be a global leader in IT solutions and education, empowering individuals and businesses with innovative technology and unmatched expertise.</p>
+    </div>
+
+    <div class="mission-box" tabindex="0">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+        <path d="M12 2a10 10 0 11-7.447 17.032l-3.293 3.293 1.414 1.414 3.293-3.293A10 10 0 0112 2zm0 4a6 6 0 100 12 6 6 0 000-12z"/>
+      </svg>
+      <h3>Our Mission</h3>
+      <p>To deliver transformative software, expert training, and real-world experience to cultivate innovation and sustainable growth.</p>
+    </div>
+  </section>
+
+  <section class="pillars" data-aos="fade-up" data-aos-duration="900" data-aos-delay="300">
+    <h2>Our Pillars of Excellence</h2>
+    <ul class="core-pillars">
+      <li><strong>Innovative Software Development:</strong> Agile, scalable, secure software tailored to diverse needs.</li>
+      <li><strong>Robust Network & IT Infrastructure:</strong> Resilient, secure networks that enable seamless operations.</li>
+      <li><strong>Comprehensive Training & Skill Development:</strong> Industry-aligned hands-on programs preparing future professionals.</li>
+      <li><strong>Internship & Real-World Projects:</strong> Practical learning with mentorship to bridge education and business demands.</li>
+      <li><strong>End-to-End Client Partnership:</strong> Ongoing consultative support and strategic guidance.</li>
+    </ul>
+  </section>
+
+  <section class="why-partner" data-aos="fade-up" data-aos-duration="900" data-aos-delay="400">
+    <h2>Why Partner with RVNS Solutions?</h2>
+    <ul class="core-pillars">
+      <li><strong>Unmatched Reliability:</strong> Consistent high quality and timely delivery.</li>
+      <li><strong>Forward-Thinking Vision:</strong> Cutting-edge, future-proof solutions.</li>
+      <li><strong>Skilled Professionals:</strong> Certified experts devoted to excellence.</li>
+      <li><strong>Tailored Solutions:</strong> Customized strategies aligned to your goals.</li>
+      <li><strong>Holistic Development:</strong> Supporting innovation and growth across the IT ecosystem.</li>
+    </ul>
+  </section>
+
+  <section class="video-section" data-aos="fade-up" data-aos-duration="900" data-aos-delay="500">
+    <h2>Watch Our CEO Message</h2>
+    <div class="video-container" style="position:relative; padding-bottom:56.25%; height: 0; overflow:hidden; border-radius:15px; box-shadow:0 10px 40px rgba(22,219,147,0.15); max-width: 800px; margin: auto;">
+      <iframe src="https://www.youtube.com/embed/your-video-id" title="CEO Message RVNS Solutions" frameborder="0" allowfullscreen 
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius:15px;"></iframe>
+    </div>
+  </section>
+
+
+  <section class="team-section" data-aos="fade-up" data-aos-duration="900" data-aos-delay="700">
+    <h2>Meet Our Team</h2>
+    <div class="team-grid">
+        <article class="team-member" tabindex="0" data-aos="zoom-in" data-aos-delay="900">
+        <img src="nagendra.jpg" alt="John Smith" class="team-photo" />
+        <h3 class="team-name">T Nagendra</h3>
+        <p class="team-title">Managing Director</p>
+        <p class="team-bio">Expert software architect passionate about crafting scalable solutions that deliver tangible business value.</p>
+      </article>
+      <article class="team-member" tabindex="0" data-aos="zoom-in" data-aos-delay="900">
+        <img src="nagaraju.jpg" alt="John Smith" class="team-photo" />
+        <h3 class="team-name">Nagaraju</h3>
+        <p class="team-title">Chief Executive Officer</p>
+        <p class="team-bio">Strategic thinker passionate about building scalable tech ecosystems, forging global partnerships, and delivering transformative digital solutions.</p>
+      </article>
+      <article class="team-member" tabindex="0" data-aos="zoom-in" data-aos-delay="1000">
+        <img src="ram.jpg" alt="Alex Jones" class="team-photo" />
+        <h3 class="team-name">K Ram</h3>
+        <p class="team-title">Supervisor</p>
+        <p class="team-bio">Dedicated to transforming talent through cutting-edge curricula and immersive project experiences.</p>
+      </article>
+            <article class="team-member" tabindex="0" data-aos="zoom-in" data-aos-delay="800">
+        <img src="narayana.jpg" alt="Narayana" class="team-photo" />
+        <h3 class="team-name">A Venkata Narayana</h3>
+        <p class="team-title">Director of Training & Innovation</p>
+        <p class="team-bio">Visionary leader with many years spearheading innovative tech companies and driving strategic partnerships worldwide.</p>
+      </article>
+    </div>
+  </section>
+  <section class="contact-cta" data-aos="fade-up" data-aos-duration="900" data-aos-delay="600" role="region" aria-label="Contact Call to Action">
+    <h2>Ready to Join or Collaborate?</h2>
+    <p>Contact us today to learn more about our training programs, software solutions, and internship opportunities. Let’s innovate together!</p>
+    <a href="contact.html" class="btn-contact" role="button">Contact Us</a>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer-bg bg-dark text-light py-5" role="contentinfo" aria-label="Site Footer" style="background:#0a2239;">
+  <div class="container">
+    <div class="row gy-4 justify-content-between">
+      
+      <!-- Logo and tagline -->
+      <div class="col-12 col-md-3 text-center text-md-start">
+        <img src="logo1.jpg" alt="RVNS Solutions" class="img-fluid mb-3" style="max-width: 160px;" />
+        <p class="fst-italic" style="max-width: 280px; margin: 0 auto 0 auto; font-size: 0.96rem; color:#e0ecea;">
+          Empowering your IT journey with skills, projects, and innovation.
+        </p>
+      </div>
+      
+      <!-- Quick Links -->
+      <div class="col-6 col-md-2">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled lh-lg mb-0">
+          <li><a href="about.html" class="footer-link text-light text-decoration-none">About Us</a></li>
+          <li><a href="courses.html" class="footer-link text-light text-decoration-none">Courses</a></li>
+          <li><a href="internships.html" class="footer-link text-light text-decoration-none">Internships</a></li>
+          <li><a href="projects.html" class="footer-link text-light text-decoration-none">Projects</a></li>
+          <li><a href="contact.html" class="footer-link text-light text-decoration-none">Contact</a></li>
         </ul>
-    </nav>
+      </div>
+      
+      <!-- Contact Us -->
+      <div class="col-12 col-md-3 text-center text-md-start">
+        <h5>Contact Us</h5>
+        <p style="color:#f8f9fa; margin-bottom: 8px;">
+          <i class="bi bi-geo-alt-fill me-2"></i>Adoni, Andhra Pradesh, India
+        </p>
+        <p style="color:#f8f9fa; margin-bottom: 8px;">
+          <i class="bi bi-telephone-fill me-2"></i>
+          <a href="tel:+918247026944" class="footer-link text-light text-decoration-none" style="word-break: break-all;">+91 8247026944</a>
+        </p>
+        <p style="color:#f8f9fa; margin-bottom: 0;">
+          <i class="bi bi-envelope-fill me-2"></i>
+          <a href="mailto:rvnssolutions@gmail.com"
+             class="footer-link text-light text-decoration-none"
+             style="word-break: break-all; white-space: normal; display: inline;">
+            rvnssolutions@gmail.com
+          </a>
+        </p>
+      </div>
+      
+      <!-- Newsletter + Socials -->
+      <div class="col-12 col-md-3 text-center text-md-start">
+        <h5>Subscribe to Our Newsletter</h5>
+        <form onsubmit="event.preventDefault(); alert('Subscribed!');" class="d-flex flex-column flex-sm-row align-items-center" style="max-width: 320px; margin: auto;">
+          <input type="email" placeholder="Enter your email" required aria-label="Email" class="form-control mb-2 mb-sm-0 me-sm-2" />
+          <button type="submit" class="btn btn-primary w-100 w-sm-auto px-4">Subscribe</button>
+        </form>
+        <div class="social-icons mt-3 d-flex justify-content-center justify-content-md-start gap-3" style="font-size: 1.2rem;">
+          <a href="https://www.facebook.com/share/1YvMWSFs6M/" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://x.com/rvnssolutions?t=0483Kkxv4J7BLPZRRg4ryg&s=08" target="_blank"><i class="bi bi-twitter"></i></a>
+          <a href="https://www.instagram.com/rvns_solutions?igsh=aGpwazMzZTlzMjUy" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/rvns-solutions-pvt-ltd-8a5278383" target="_blank"><i class="bi bi-linkedin"></i></a>
+          <a href="https://youtube.com/@rvns-solutions?si=_4U5xgGO_9LJ9Lsr" target="_blank"><i class="bi bi-youtube"></i></a>
+          <a href="https://wa.me/918247026944" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center small mt-4" style="opacity: 0.87; color:#e1ecea;">
+      <a href="privacy.html" class="footer-link text-light text-decoration-none me-3">Privacy Policy</a>
+      <a href="terms.html" class="footer-link text-light text-decoration-none">Terms of Service</a>
+      <p class="mt-2 mb-0">© 2025 RVNS Solutions. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS (for icons/controls) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
 
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Us</h2>
-        <div class="about-content">
-            <img src="director.jpg" alt="Director" class="director-img">
-            <p style="font-size: 16px; color: #333; line-height: 1.7; text-align: justify;">
-                <strong>RVNS SOLUTIONS</strong> is a leading educational institute dedicated to providing high-quality software training programs. We are committed to empowering students and professionals with practical, industry-relevant skills that enable them to excel in today’s fast-paced technology-driven world. Our programs cover programming languages, full-stack development, data science, and other essential software skills.
-                <br><br>
-                Since our inception, we have delivered an exceptional learning experience that emphasizes not just theory but also real-world practice. Our mission is to prepare learners for the dynamic demands of the tech industry with confidence and competence.
-            </p>
-        </div><br>
-        <section id="vision">
-            <h3 style="text-align:center; size: 20;">Our Vision</h3>
-            <p class="about-text">
-                To be a distinguished leader in providing transformative software education that nurtures skilled professionals, enabling them to drive innovation and lead in a technology-driven world.
-            </p>
-        </section>
-    
-        <!-- Mission Section -->
-        <section id="mission">
-            <h3>Our Mission</h3>
-            <p class="about-text">
-                Our mission is to deliver high-quality, industry-aligned software training programs that are accessible, flexible, and designed to empower individuals to excel in real-world applications, advancing their careers and contributing to the technological progress of society.
-            </p>
-        </section>
-        <section id="core-values">
-            <h3>Core Values</h3>
-            <p class="about-text">
-                At RVNS SOLUTIONS, we believe in fostering a culture of excellence, integrity, and continuous growth. Our core values drive every aspect of our training programs and interactions with students, ensuring that we remain true to our mission.
-            </p>
-            <ul class="core-values-list" style="text-align: left;color: black;">
-                <li><strong style="text-align: left;color: black;">Excellence:</strong> We deliver the highest quality of education, constantly updating our curriculum to reflect the latest industry standards.</li>
-                <li><strong style="text-align: left;color: black;">Integrity:</strong> We operate with honesty, transparency, and respect in all our dealings with students, staff, and partners.</li>
-                <li><strong style="text-align: left;color: black;">Innovation:</strong> We embrace innovation, continuously evolving our teaching methods and course content to stay ahead of the curve.</li>
-                <li><strong style="text-align: left;color: black;">Student-Centric Approach:</strong> Our students' success is our priority. We focus on personalized attention and mentorship to ensure their individual growth.</li>
-                <li><strong style="text-align: left;color: black;">Quality:</strong> We maintain a high standard of education and strive to exceed student expectations in every course we offer.</li>
-            </ul>
-        </section>
-    </section>
-
-
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 RVNS Solutions. All rights reserved.</p>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <button id="back-to-top" title="Go to top">↑</button>
-
-    <!-- JavaScript -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let slides = document.querySelectorAll(".slide");
-            let index = 0;
-
-            function changeSlide() {
-                slides.forEach(slide => slide.classList.remove("active"));
-                slides[index].classList.add("active");
-                index = (index + 1) % slides.length;
-            }
-
-            setInterval(changeSlide, 3000);
-
-            window.onscroll = function () {
-                const backToTopButton = document.getElementById("back-to-top");
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    backToTopButton.style.display = "block";
-                    backToTopButton.style.opacity = "1";
-                } else {
-                    backToTopButton.style.opacity = "0";
-                    setTimeout(() => {
-                        backToTopButton.style.display = "none";
-                    }, 300);
-                }
-            };
-
-            document.getElementById("back-to-top").onclick = function () {
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-            };
-        });
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const seeMoreBtn = document.getElementById("see-more-btn");
-        const galleryImages = document.querySelectorAll(".gallery-image");
-
-        // Initially show only the first 5 images
-        galleryImages.forEach((image, index) => {
-            if (index >= 5) {
-                image.style.display = "none";
-            }
-        });
-
-        // Toggle visibility of all images when "See More" is clicked
-        seeMoreBtn.addEventListener("click", function () {
-            galleryImages.forEach((image) => {
-                image.style.display = "block";
-            });
-            seeMoreBtn.style.display = "none"; // Hide the button after showing all images
-        });
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const seeMoreBtn = document.getElementById("see-more-btn");
-        const galleryItems = document.querySelectorAll(".gallery-item");
-
-        // Initially show only the first 5 items
-        galleryItems.forEach((item, index) => {
-            if (index >= 5) {
-                item.style.display = "none";
-            }
-        });
-
-        // Toggle visibility of all items when "See More" is clicked
-        seeMoreBtn.addEventListener("click", function () {
-            galleryItems.forEach((item) => {
-                item.style.display = "block";
-            });
-            seeMoreBtn.style.display = "none"; // Hide the button after showing all items
-        });
-    });
-
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 900,
+    easing: 'ease-in-out',
+    once: true,
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
