@@ -108,15 +108,15 @@ $avg_rating = $feedback_count ? round(array_sum(array_column($feedbacks,'rating'
 
     <div class="collapse navbar-collapse" id="mainNav">
       <ul class="navbar-nav ms-auto text-uppercase">
-        <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
-        <li class="nav-item"><a href="internships.html" class="nav-link">Internships</a></li>
-        <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
-        <li class="nav-item"><a href="development.html" class="nav-link">Development</a></li>
-        <li class="nav-item"><a href="career.php" class="nav-link">Career</a></li>
-        <li class="nav-item"><a href="feedback.php" class="nav-link active">FAQ</a></li>
-        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="https://rvnssolutionspvtltd.in/index.html" class="nav-link" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="https://rvnssolutionspvtltd.in/about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="https://rvnssolutionspvtltd.in/courses.html" class="nav-link">Courses</a></li>
+        <li class="nav-item"><a href="https://rvnssolutionspvtltd.in/internships.html" class="nav-link">Internships</a></li>
+        <li class="nav-item"><a href="https://rvnssolutionspvtltd.in/projects.html" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="https://rvnssolutionspvtltd.in/development.html" class="nav-link">Development</a></li>
+        <li class="nav-item"><a href="https://rvnssolutionspvtltd.in/career.php" class="nav-link">Career</a></li>
+        <li class="nav-item"><a href="https://rvnssolutionspvtltd.in/feedback.php" class="nav-link active">FAQ</a></li>
+        <li class="nav-item"><a href="https://rvnssolutionspvtltd.in/contact.html" class="nav-link">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -346,3 +346,4 @@ $avg_rating = $feedback_count ? round(array_sum(array_column($feedbacks,'rating'
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
